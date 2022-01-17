@@ -24,7 +24,7 @@ def gen_data(diorisis_file, out_name):
         print(f"Processando {diorisis_file}, com {len(texto_uni)} caracteres")
 
     doc = NLP(texto_uni)
-    serialized_string = doc.to_serialized() # type: ignore
+    serialized_string = doc.to_serialized()  # type: ignore
 
     with open(out_name, "wb") as out_file:
         out_file.write(serialized_string)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
         if document.replace("json", "pickle") in os.listdir(PROC_DATA_PATH):
             continue
         else:
-            diorisis_file = os.path.join(DIORISIS_PATH, document) # type: ignore
-            out_name = os.path.join(PROC_DATA_PATH, document.replace("json", "pickle")) # type: ignore
+            diorisis_file = os.path.join(DIORISIS_PATH, document)  # type: ignore
+            out_name = os.path.join(PROC_DATA_PATH, document.replace("json", "pickle"))  # type: ignore
 
         gen_data(diorisis_file, out_name)
