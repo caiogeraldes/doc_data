@@ -62,6 +62,71 @@ def get_by_morpho(
     return hits_sent_id, hits_ids
 
 
+def get_by_morpho_rel(
+    doc: stanza.Document,
+    morphorel,
+    filtered_sents=False,
+    target_heads=False,
+    secondary_filter=False,
+):
+    hits_sent_id = []
+    hits_ids = []
+
+    morpho, rel = morphorel.split('-')
+
+    for sent_id, sent in enumerate(doc.sentences):
+        if type(filtered_sents) == list:
+            if secondary_filter:
+                if sent_id not in secondary_filter:
+                    continue
+            if sent_id not in filtered_sents:
+                continue
+        hits_id = []
+        for word in sent.words:
+            if target_heads:
+                if word.head not in list(target_heads[filtered_sents.index(sent_id)]):
+                    continue
+            if word.upos in ["NOUN", "ADJ", "PRON", "VERB"] and word.feats is not None:
+                if morpho in word.feats and word.deprel == rel:
+                    hits_id.append(word.id)
+        if len(hits_id) > 0:
+            hits_ids.append(hits_id)
+            hits_sent_id.append(sent_id)
+    return hits_sent_id, hits_ids
+
+
+def get_by_lemma_morpho(
+    doc: stanza.Document,
+    lemmamorpho,
+    filtered_sents=False,
+    target_heads=False,
+    secondary_filter=False,
+):
+    hits_sent_id = []
+    hits_ids = []
+    lemma, morpho = lemmamorpho.split('-')
+
+    for sent_id, sent in enumerate(doc.sentences):
+        if type(filtered_sents) == list:
+            if secondary_filter:
+                if sent_id not in secondary_filter:
+                    continue
+            if sent_id not in filtered_sents:
+                continue
+        hits_id = []
+        for word in sent.words:
+            if target_heads:
+                if word.head not in list(target_heads[filtered_sents.index(sent_id)]):
+                    continue
+            if word.upos in ["NOUN", "ADJ", "PRON", "VERB"] and word.feats is not None:
+                if morpho in word.feats and word.lemma == lemma:
+                    hits_id.append(word.id)
+        if len(hits_id) > 0:
+            hits_ids.append(hits_id)
+            hits_sent_id.append(sent_id)
+    return hits_sent_id, hits_ids
+
+
 class FilterRule:
     def __init__(
         self,
@@ -83,6 +148,10 @@ class FilterRule:
             return get_by_lemma
         elif self.method == "morpho":
             return get_by_morpho
+        elif self.method == "lemmamorpho":
+            return get_by_lemma_morpho
+        elif self.method == "morphorel":
+            return get_by_morpho_rel
         else:
             return print
 
@@ -134,8 +203,8 @@ if __name__ == "__main__":
     b = FilterPipe(
         doc,
         {
-            "string": "δέομαι",
-            "method": "lemma",
+            "string": "δοκέω-Number=Sing|Person=3",
+            "method": "lemmamorpho",
             "filtered_sents": False,
             "target_heads": False,
             "secondary_filter": False,
