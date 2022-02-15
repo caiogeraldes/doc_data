@@ -1,12 +1,31 @@
- steps:
-  - uses: actions/checkout@v1
-  - name: Set up Python ${{ matrix.python-version }}
-    uses: actions/setup-python@v2
-    with:
-      python-version: ${{ matrix.python-version }}
-  - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install tox tox-gh-actions
-  - name: Test with tox
-    run: tox
+---
+name: 🧪
+
+on:
+  pull_request:
+  push:
+  schedule:
+  - cron: 1 0 * * *  # Run daily at 0:01 UTC
+
+concurrency:
+  group: >-
+    ${{
+        github.workflow
+    }}-${{
+        github.event.pull_request.number || github.sha
+    }}
+  cancel-in-progress: true
+
+jobs:
+  tox-matrix:
+    name: >-  # Short name for UI, or use 🧑‍💻, it's even shorter
+      [m]
+    # REPRODUCIBILITY NOTE: Replace the `main` version with a stable tag
+    uses: tox-dev/workflow/.github/workflows/tox.yml@main
+    with:  # all of these inputs are absolutely optional
+      max-python:  # Python maximum, formated as MAJOR.MINOR
+      min-python:  # Python minimum, formated as MAJOR.MINOR
+      tox-target:  # Regex to filter the detected tox envs
+      tox-version:  # Tox PyPI package w/ version spec for pip
+      YOLO: true  # Rely on the unstable version of the underlying GHA
+...
