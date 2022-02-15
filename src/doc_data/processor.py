@@ -1,7 +1,10 @@
+"""
+Module for processing and generating the data for my PhD
+"""
 import time
-import stanza
 import json
-from cltk.alphabet.grc import normalize_grc, beta_to_unicode
+import stanza  # type: ignore
+from cltk.alphabet.grc import normalize_grc, beta_to_unicode  # type: ignore
 
 NLP = stanza.Pipeline(
     lang="grc", package="perseus", verbose=False, depparse_batch_size=400
@@ -9,8 +12,11 @@ NLP = stanza.Pipeline(
 
 
 def gen_data(diorisis_file, out_name):
+    """
+    Generates the stanza document and saves it in the format .pickle.
+    """
     start = time.time()
-    with open(diorisis_file, "r") as file:
+    with open(diorisis_file, "r", encoding='utf-8') as file:
         doc = json.load(file)
         texto_beta = ""
         for sent in doc["sentences"]:
@@ -33,24 +39,10 @@ def gen_data(diorisis_file, out_name):
 
 
 def read_data(serialized_path):
+    """
+    Reads a stanza document serialized to pickle file.
+    """
     with open(serialized_path, "rb") as file:
         pic = file.read()
     doc = stanza.Document.from_serialized(pic)
     return doc
-
-
-if __name__ == "__main__":
-    import os
-
-    from doc_data.main import DIORISIS_PATH, PROC_DATA_PATH
-
-    for document in os.listdir(DIORISIS_PATH):
-        if document == "corpus.json":
-            continue
-        if document.replace("json", "pickle") in os.listdir(PROC_DATA_PATH):
-            continue
-        else:
-            diorisis_file = os.path.join(DIORISIS_PATH, document)  # type: ignore
-            out_name = os.path.join(PROC_DATA_PATH, document.replace("json", "pickle"))  # type: ignore
-
-        gen_data(diorisis_file, out_name)
