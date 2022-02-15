@@ -1,13 +1,15 @@
 import os
+import stanza
 from stanza import Document
 from stanza.models.common.doc import Sentence, Word
-from doc_data.main import DIORISIS_PATH
 from doc_data.processor import gen_data, read_data
 
-PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data"
+PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data/proc/"
 TEST_DOC = "Lysias (0540) - For Callias (005).json"
-DIOFILE = os.path.join(DIORISIS_PATH, TEST_DOC)  # type: ignore
+DIOFILE = os.path.join("/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data/preproc/", TEST_DOC)  # type: ignore
 OUTNAME = os.path.join(PROC_DATA_PATH, TEST_DOC.replace("json", "pickle"))
+
+stanza.download(lang="grc")
 
 
 def test_gen_data():

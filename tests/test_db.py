@@ -2,7 +2,7 @@ from pytest import raises
 from doc_data.db import mongo, write_pickle_to_mongo
 from pymongo.database import Database
 from pymongo.errors import ConnectionFailure
-PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data"
+PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data/proc/"
 MONGO_ERROR_PATH = "mongodb+srv://silenus:86432@cluster0.ckrsn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 
