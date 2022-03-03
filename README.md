@@ -75,3 +75,14 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
 ### Coleta de amostras
 
 - [ ] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/searchpipeline.py`. Sendo assim, elas são específicas para este trabalho.
+    - [ ] Separação entre autores.
+    - [ ] Seleção de sentenças contendo os verbos de `mvi`.
+    - [ ] Filtragem de sentenças contendo infinitivo subordinado ao verbo principal;
+    - [ ] Filtragem de sentenças contendo dativo ou genitivo subordinado ao verbo principal (caso a partir de `mvi`).
+    - [ ] Filtragem de sentenças contendo predicado secundário subordinado ou ao VP ou ao Inf.
+    - [ ] Revisão manual dos dados.
+    - [ ] Reformulação da pipeline se necessário.
+- [ ] Uma vez coletadas, as amostras serão salvas em uma coleção no database `phd`, usando a estrutura:
+    ```json
+    {}
+    ```
