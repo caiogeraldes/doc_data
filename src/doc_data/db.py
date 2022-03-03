@@ -47,6 +47,7 @@ def write_pickle_to_mongo(proc_path, mongo_collection):
             for t_id, token in enumerate(j):
                 token["doc_name"] = title
                 token["author"] = author
+                token["text_id"] = md5(f"{token['author']}-{token['doc_name']}".encode()).hexdigest()
                 token["sent_id"] = i + 1
                 token["sid_id"] = (token["sent_id"], token["id"])
                 token["sid_hid"] = (token["sent_id"], token["head"])
