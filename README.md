@@ -18,7 +18,7 @@ Baixar:
 Criar:
 - arquivo de texto `.env` na raiz do projeto com a estrutura:
 
-```{bash}
+```bash
 DIORISIS_PATH = "/path/to/diorisis-resources/json/"
 PROC_DATA_PATH = "/path/to/output/data/"
 MONGO="mongodb://000.0.0.0:00000/" # Connection to a MongoDB database
@@ -41,8 +41,8 @@ Conversão do banco de dados em `DIORISIS_PATH` em um documento `stanza` (`src/d
 Para garantir que os dados sejam recuperáveis da maneira mais eficiente o possível, utiliza-se um banco de dados `MongoDB` estruturado da seguinte maneira:
 
 - PhD (database)
-    - tokens (collection): coleção de tokens de todos os autores e textos selecionados (`write_pickle_to_mongo` de `./src/doc_data/db.py`). Exemplo de documento:
-        ```{json}
+    - [x] tokens (collection): coleção de tokens de todos os autores e textos selecionados (`write_pickle_to_mongo` de `./src/doc_data/db.py`). Exemplo de documento:
+        ```json
         _id : "8c2976b6df70db489068dd3d67eb0b79"
         id : 1
         text : "οὐ"
@@ -68,5 +68,5 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
         5. `sid_id`: armazena o índice da sentença e do token em uma tupla;
         6. `sid_hid`: armazena o índice da sentença e do token analisado como `head`.
         7. `_id`: identificação única gerada a partir do autor, nome do texto e `sid_id`, hasheado com `hashlib.md5`
-    - mvi (collection): coleção de verbos principais de interesse com características centrais (lemma, valência, regência, semântica) [TO-DO]
+    - [ ] mvi (collection): coleção de verbos principais de interesse com características centrais (lemma, valência, regência, semântica) **TO-DO**
 
