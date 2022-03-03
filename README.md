@@ -74,4 +74,4 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
 
 ### Coleta de amostras
 
-- [] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/searchpipeline.py`. Sendo assim, elas são específicas para este trabalho.
+- [ ] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/searchpipeline.py`. Sendo assim, elas são específicas para este trabalho.
