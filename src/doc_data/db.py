@@ -8,10 +8,9 @@ from tqdm import trange  # type: ignore
 from pymongo import MongoClient  # type: ignore
 from pymongo.errors import ConnectionFailure, DuplicateKeyError  # type: ignore
 from doc_data.processor import read_data
-from doc_data.main import PROC_DATA_PATH, MONGO
 
 
-def mongo(mongo_url=MONGO, database_name="phd"):
+def mongo(mongo_url, database_name="phd"):
     """
     Connect to MongoDB
     """
@@ -36,7 +35,7 @@ def write_pickle_to_mongo(proc_path, mongo_collection):
         author, title = proc_file.replace(".pickle", "").split("-", 1)
         author = author.strip()
         title = title.strip()
-        doc_d = read_data(os.path.join(PROC_DATA_PATH, proc_file)).to_dict()  # type: ignore
+        doc_d = read_data(os.path.join(proc_path, proc_file)).to_dict()  # type: ignore
         # doc_d = doc.to_dict()
         pbar = trange(
             len(doc_d),
@@ -47,7 +46,9 @@ def write_pickle_to_mongo(proc_path, mongo_collection):
             for t_id, token in enumerate(j):
                 token["doc_name"] = title
                 token["author"] = author
-                token["text_id"] = md5(f"{token['author']}-{token['doc_name']}".encode()).hexdigest()
+                token["text_id"] = md5(
+                    f"{token['author']}-{token['doc_name']}".encode()
+                ).hexdigest()
                 token["sent_id"] = i + 1
                 token["sid_id"] = (token["sent_id"], token["id"])
                 token["sid_hid"] = (token["sent_id"], token["head"])
