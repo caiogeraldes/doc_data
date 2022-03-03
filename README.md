@@ -75,7 +75,7 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
 ### Coleta de amostras
 
 - [ ] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/searchpipeline.py`. Sendo assim, elas são específicas para este trabalho.
-    - [ ] Separação entre autores.
+    - [ ] Separação por textos.
     - [ ] Seleção de sentenças contendo os verbos de `mvi`.
     - [ ] Filtragem de sentenças contendo infinitivo subordinado ao verbo principal;
     - [ ] Filtragem de sentenças contendo dativo ou genitivo subordinado ao verbo principal (caso a partir de `mvi`).
