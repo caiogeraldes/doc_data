@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "doc_data"
-version = "0.3.2"
+version = "0.3.6"
 description = "Data collector for my PhD"
 authors = ["Caio Geraldes <caioaguida@protonmail.com>"]
 
@@ -23,6 +23,7 @@ tqdm = "^4.62.3"
 importlib-metadata= "^4.8.2"
 python-dotenv = "^0.19.2"
 pymongo = "^4.0.1"
+dnspython = "2.2.0"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.3.1"

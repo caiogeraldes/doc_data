@@ -1,8 +1,8 @@
 import os
-from doc_data.main import PROC_DATA_PATH
 from doc_data.processor import read_data
 from doc_data.tools import stanza_doc_to_pandas
 
+PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/data/"
 
 def test_stanza_to_pandas():
     doc_path = os.path.join(PROC_DATA_PATH,  # type: ignore
