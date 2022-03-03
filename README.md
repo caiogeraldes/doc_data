@@ -27,7 +27,7 @@ MONGO="mongodb://000.0.0.0:00000/" # Connection to a MongoDB database
 - Recomendo separar os textos de interesse da pasta principal de `diorisis-resources/json` para uma subpasta.
 
 
-### Preparação dos dados
+### Pré-processamento dos dados
 
 Conversão do banco de dados em `DIORISIS_PATH` em um documento `stanza` (`src/doc_data/processor.py`) serializado salvo em `PROC_DATA_PATH`.
 
@@ -70,5 +70,8 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
         5. `sid_id`: armazena o índice da sentença e do token em uma tupla;
         6. `sid_hid`: armazena o índice da sentença e do token analisado como `head`.
         7. `_id`: identificação única gerada a partir do autor, nome do texto e `sid_id`, hasheado com `hashlib.md5`
-    - [ ] mvi (collection): coleção de verbos principais de interesse com características centrais (lemma, valência, regência, semântica) **TO-DO**
+    - [ ] mvi (collection): coleção de verbos principais de interesse com características centrais (lemma, valência, regência, semântica)
 
+### Coleta de amostras
+
+- [] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/searchpipeline.py`. Sendo assim, elas são específicas para este trabalho.
