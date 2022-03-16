@@ -4,7 +4,7 @@ Module for processing and generating the data for my PhD
 import time
 import json
 import stanza  # type: ignore
-from cltk.alphabet.grc import normalize_grc, beta_to_unicode
+from cltk.alphabet.grc import normalize_grc, beta_to_unicode  # type: ignore
 
 
 def gen_data(nlp, diorisis_file, out_name):
@@ -12,7 +12,7 @@ def gen_data(nlp, diorisis_file, out_name):
     Generates the stanza document and saves it in the format .pickle.
     """
     start = time.time()
-    with open(diorisis_file, "r", encoding='utf-8') as file:
+    with open(diorisis_file, "r", encoding="utf-8") as file:
         doc = json.load(file)
         texto_beta = ""
         for sent in doc["sentences"]:
