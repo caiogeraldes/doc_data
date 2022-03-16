@@ -1,5 +1,7 @@
 # Banco de dados para Semântica e Pragmática da Atração de Caso em Grego Antigo
 
+[![Python package](https://github.com/caiogeraldes/doc_data/actions/workflows/python-package.yml/badge.svg)](https://github.com/caiogeraldes/doc_data/actions/workflows/python-package.yml)
+
 **Autor:** Caio Borges Aguida Geraldes
 
 Este pacote contém os scripts utilizados para a preparação, coleta e agregação dos dados a serem utilizados na pesquisa de doutorado "Semântica e Pragmática da Atração de Caso em Grego Antigo", realizada no PPG - Letras Clássicas (DLCV - FFLCH - USP), financiado pela FAPESP, nº2021/06027-4.
