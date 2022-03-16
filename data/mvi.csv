@@ -1,0 +1,44 @@
+lemma,freq,ctxfreq,xobj_case,personal,impersonal,modal_semantics,personal_valid,impersonal_valid,lsj_entry,opt_acc,short_def,cmt
+ἀνίημι,,,dat,1,0,0,1,0,ἀνίημι,yes,urge,
+ἀφίημι,,,dat,1,0,0,1,0,ἀφίημι,yes,allow,not accounted by LSJ or DGE: Xen.Hell. 6.1.13
+δέομαι,,,gen,1,1,0,1,0,δέω2,not_quite,ask,δεῖ?
+δίδωμι,,,dat,1,0,0,1,0,δίδωμι,yes,allow,dat rare
+δοκέω,,,dat,1,1,0,0,1,δοκέω,not_quite,believe,trouble maker
+ἐγχωρέω,,,dat,1,1,1,0,1,ἐγχωρέω,no,be_possible,
+ἐκγίγνομαι,,,dat,1,1,1,0,1,ἐκγίγνομαι,yes,be_possible,acc rare; negative supplement of ἔξεστι? 
+ἔνειμι,,,dat,1,1,1,0,1,ἔνειμι,no,be_possible,
+ἐντέλλω,,,dat,1,0,0,1,0,ἐντέλλω,no,command,middle voice
+ἐξαρκέω,,,dat,1,1,1,0,1,ἐξαρκέω,not_quite,be_enough,
+ἔξεστι,,,dat,0,1,1,0,1,ἔξεστι,no,be_possible,"exc. in αἰ ἐλεύθεροι μὴ ἐξεῖεν if [a woman] shall leave no free-born issue, Leg.Gort. 7.9."
+ἔοικα,,,dat,1,1,0,0,1,ἔοικα,yes,believe,trouble maker
+ἐπαγγέλλω,,,dat,1,0,0,1,0,ἐπαγγέλλω,yes,command,
+ἐπαινέω,,,dat,1,0,0,1,0,ἐπαινέω,yes,advise,"τοιούσδʼ ἐπαινεῖς δῆτα σὺ κτᾶσθαι φίλους; S. Aj. 1360, cf. A. Th. 596, Supp. 996"
+ἐπιβάλλω,,,dat,1,1,1,0,1,ἐπιβάλλω,yes,be_appropriate,"τοὺς Δελφοὺς δὴ ἐπέβαλλε . . παρασχεῖν it concerned them to provide, Hdt. 2.180"
+ἐπισκήπτω,,,dat,1,0,0,1,0,ἐπισκήπτω,yes,command,acc rare
+ἐπιτάσσω,,,dat,1,0,0,1,0,ἐπιτάσσω,yes,command,acc rare
+ἐπιτέλλω,,,dat,1,0,0,1,0,ἐπιτέλλω,no,command,
+ἱκετεύω,,,gen,1,0,0,1,0,ἱκετεύω,yes,ask,"ὁ δέ με μάλα πόλλʼ ἱκέτευεν ἱππόθεν ἐξέμεναι Od. 11.530, cf. Hdt. 1.11, S. OC 1414, E. Ion 468 (lyr.); δέομαι ὑμῶν καὶ ἱ. καὶ ἀντιβολῶ . . βοηθῆσαι"
+καταδικάζω,,,gen,1,0,0,1,0,καταδικάζω,no,condemn,
+κηρύσσω,,,dat,1,0,0,1,0,κηρύσσω,no,command,
+παραγγέλλω,,,dat,1,0,0,1,0,παραγγέλλω,no,command,"acc for things only: π. παρασκευὴν σίτου order corn to be supplied, Hdt. 3.25"
+παραιτέω,,,gen,1,0,0,1,0,παραιτέομαι,yes,ask,active almost missing
+παραμυθέομαι,,,dat,1,0,0,1,0,παραμυθέομαι,yes,encourage,acc rarer
+παρίημι,,,dat,1,0,0,1,0,παρίημι,no,allow,
+πιστεύω,,,dat,1,0,0,1,0,πιστεύω,no,believe,
+πόρω,,,dat,0,1,1,0,1,πόρω,no,allow,"rare verb, probably unattested in the corpus"
+πρέπει,,,dat,1,1,1,0,1,πρέπει,yes,be_appropriate,πρέπει τὸν Αἰνησιδάμου ἐγκωμίων τε μελέων λυρᾶν τε τυγχανέμεν Pi. O. 2.46
+προβάλλω,,,dat,1,0,0,1,0,προβάλλω,no,challenge,rare in this acception
+προξενέω,,,dat,1,0,0,1,0,προξενέω,no,allow,more like grant
+προσδέομαι,,,gen,1,1,1,1,0,προσδέω2,not_quite,ask,see δέομαι
+προσήκω,,,dat,1,1,1,0,1,προσήκω,yes,be_appropriate,"οὐδέν μοι π. τῆς αἰτίας ταύτης I have nothing to do with . . , Antipho 6.33"
+προστάσσω,,,dat,1,0,0,1,0,προστάσσω,yes,command,"acc. et inf., E. Hel. 890; both usages in successive clauses, ὅσα οἱ νόμοι π. τοὺς προσήκοντας ποιεῖν, ἡμῖν π. καὶ ἀναγκάζουσι ποιεῖν D. 43.59"
+προσχρῄζω,,,gen,1,0,0,1,0,προσχρῄζω,no,ask,see χρῄζω
+προτίθημι,,,dat,1,0,0,1,0,προτίθημι,yes,propose,
+σημαίνω,,,dat,1,1,0,1,0,σημαίνω,no,command,"also gen? c. gen., στρατοῦ Il. 14.85"
+συγγιγνώσκω,,,dat,1,0,0,1,0,συγγιγνώσκω,yes,acknowledge,
+συμβαίνω,,,dat,1,1,1,0,1,συμβαίνω,yes,to_happen,σ. τῷ οἰκοδόμῳ μουσικῷ εἶναι Arist. Metaph. 1017a11
+συμβουλεύω,,,dat,1,0,0,1,0,συμβουλεύω,yes,advise,acc rare
+συμπίπτω,,,dat,1,1,1,0,1,συμπίπτω,yes,to_happen,
+συμφέρω,,,dat,1,1,1,0,1,συμφέρω,not_quite,be_useful,not accounted by LSJ
+ὑπάρχω,,,dat,1,1,1,0,1,ὑπάρχω,not_quite,be_possible,
+χρῄζω,,,gen,1,0,0,1,0,χρῄζω,yes,ask,
