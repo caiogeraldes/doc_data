@@ -4,7 +4,6 @@ from pytest import raises
 from doc_data.db import mongo, write_pickle_to_mongo
 from pymongo.database import Database
 from pymongo.errors import ConnectionFailure
-from doc_data.processor import gen_data
 
 pytest_plugins = "pytester"
 
