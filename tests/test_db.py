@@ -1,6 +1,5 @@
 import os
 import pytest
-import stanza
 from pytest import raises
 from doc_data.db import mongo, write_pickle_to_mongo
 from pymongo.database import Database
