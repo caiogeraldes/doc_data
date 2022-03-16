@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "doc_data"
-version = "0.3.7"
+version = "0.3.8"
 description = "Data collector for my PhD"
 authors = ["Caio Geraldes <caioaguida@protonmail.com>"]
 

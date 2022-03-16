@@ -7,9 +7,11 @@ PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/data/"
 STANZA_RESOURCES = "./stanza_resources"
 stanza.download(lang="grc", model_dir=STANZA_RESOURCES)
 
+
 def test_stanza_to_pandas():
-    doc_path = os.path.join(PROC_DATA_PATH,  # type: ignore
-                            "Herodotus (0016) - Histories (001).pickle")  # type: ignore
+    doc_path = os.path.join(
+        PROC_DATA_PATH, "Herodotus (0016) - Histories (001).pickle"  # type: ignore
+    )  # type: ignore
     _, file_name = os.path.split(doc_path)
     author_, doc_name_ = file_name.replace(".pickle", "").split("-")
     author_ = author_.strip()
