@@ -10,6 +10,12 @@ from cltk.alphabet.grc import normalize_grc, beta_to_unicode  # type: ignore
 def gen_data(nlp, diorisis_file, out_name):
     """
     Generates the stanza document and saves it in the format .pickle.
+    args:
+        nlp: [stanza.Pipeline] A `stanza` Pipeline for Greek.
+        diorisis_file: [str] .json file from the Diorisis corpus
+            (at:[https://figshare.com/articles/dataset/The_Diorisis_Ancient_Greek_Corpus_JSON_/12251468])
+        out_name: [str] Name for the output serialized file to be created
+            (recommended to use a .pickle format)
     """
     start = time.time()
     with open(diorisis_file, "r", encoding="utf-8") as file:

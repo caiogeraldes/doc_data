@@ -15,7 +15,7 @@ Instalar:
 - `python`, `pip`, `poetry`, `MongoDB`
 
 Baixar:
-- [Diorisis](https://www.crs.rm.it/diorisissearch/) ([Vatri, A. and McGillivray, B. 2020](https://brill.com/view/journals/jgl/20/2/article-p179_4.xml))
+- [Diorisis](https://figshare.com/articles/dataset/The_Diorisis_Ancient_Greek_Corpus_JSON_/12251468) ([Vatri, A. and McGillivray, B. 2020](https://brill.com/view/journals/jgl/20/2/article-p179_4.xml))
 
 Criar:
 - arquivo de texto `.env` na raiz do projeto com a estrutura:
