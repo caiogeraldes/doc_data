@@ -764,6 +764,9 @@ category = "main"
 optional = false
 python-versions = ">=3.6"
 
+[package.dependencies]
+dnspython = {version = ">=1.16.0,<3.0.0", optional = true, markers = "extra == \"srv\""}
+
 [package.extras]
 aws = ["pymongo-auth-aws (<2.0.0)"]
 encryption = ["pymongocrypt (>=1.2.0,<2.0.0)"]
@@ -1206,7 +1209,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.6"
-content-hash = "55b46b567cb79dd6bb28420b2ff799a66bcbf5ed7779299128fbe7b1cc5ccb14"
+content-hash = "f0bf4edc22e01f3070d80e423fb63719f58041b0cc326db62256343352da5082"
 
 [metadata.files]
 appnope = [
