@@ -2,7 +2,6 @@
 Module for processing and generating the serialized stanza datase
 from .json files of the Diorisis Corpus.
 """
-import time
 import json
 import stanza  # type: ignore
 from cltk.alphabet.grc import normalize_grc, beta_to_unicode  # type: ignore
@@ -18,7 +17,6 @@ def gen_data(nlp, diorisis_file, out_name):
         out_name: [str] Name for the output serialized file to be created
             (recommended to use a .pickle format)
     """
-    start = time.time()
     with open(diorisis_file, "r", encoding="utf-8") as file:
         doc = json.load(file)
         texto_beta = ""
@@ -30,15 +28,12 @@ def gen_data(nlp, diorisis_file, out_name):
         del conv
         del doc
         del texto_beta
-        print(f"Processando {diorisis_file}, com {len(texto_uni)} caracteres")
 
     doc = nlp(texto_uni)
     serialized_string = doc.to_serialized()  # type: ignore
 
     with open(out_name, "wb") as out_file:
         out_file.write(serialized_string)
-    end = time.time()
-    print("Tempo decorrido: ", end - start)
 
 
 def read_data(serialized_path):
