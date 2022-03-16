@@ -8,9 +8,8 @@ PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data
 TEST_DOC = "Lysias (0540) - For Callias (005).json"
 DIOFILE = os.path.join("/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data/preproc/", TEST_DOC)  # type: ignore
 OUTNAME = os.path.join(PROC_DATA_PATH, TEST_DOC.replace("json", "pickle"))
-
-stanza.download(lang="grc")
-
+STANZA_RESOURCES = "./stanza_resources"
+stanza.download(lang="grc", model_dir=STANZA_RESOURCES)
 
 def test_gen_data():
     gen_data(DIOFILE, OUTNAME)

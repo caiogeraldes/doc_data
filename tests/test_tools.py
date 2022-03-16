@@ -1,8 +1,11 @@
 import os
+import stanza
 from doc_data.processor import read_data
 from doc_data.tools import stanza_doc_to_pandas
 
 PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/data/"
+STANZA_RESOURCES = "./stanza_resources"
+stanza.download(lang="grc", model_dir=STANZA_RESOURCES)
 
 def test_stanza_to_pandas():
     doc_path = os.path.join(PROC_DATA_PATH,  # type: ignore

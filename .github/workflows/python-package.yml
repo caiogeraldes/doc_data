@@ -40,3 +40,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+      env:
+        STANZA_RESOURCES_DIR = './stanza_resources'

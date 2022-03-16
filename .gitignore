@@ -144,3 +144,4 @@ notebook/
 .unused/
 main.py
 test_main.py
+stanza_resources/
