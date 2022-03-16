@@ -29,7 +29,7 @@ def write_pickle_to_mongo(proc_path, mongo_collection):
     Converts the data in PROC_DATA_PATH to a MongoDB.
     Each token becomes a single MongoDB Document.
     """
-    files = os.listdir(proc_path)
+    files = [x for x in os.listdir(proc_path) if x.endswith("pickle")]
     n_files = len(files)
     for f_id, proc_file in enumerate(files):
         author, title = proc_file.replace(".pickle", "").split("-", 1)
