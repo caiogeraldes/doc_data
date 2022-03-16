@@ -1,6 +1,7 @@
 # Banco de dados para Semântica e Pragmática da Atração de Caso em Grego Antigo
 
 [![Production](https://github.com/caiogeraldes/doc_data/actions/workflows/production-tests.yml/badge.svg)](https://github.com/caiogeraldes/doc_data/actions/workflows/production-tests.yml)
+[![Dev](https://github.com/caiogeraldes/doc_data/actions/workflows/dev-tests.yml/badge.svg)](https://github.com/caiogeraldes/doc_data/actions/workflows/dev-tests.yml)
 
 **Autor:** Caio Borges Aguida Geraldes
 
