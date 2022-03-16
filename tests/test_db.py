@@ -1,4 +1,3 @@
-import stanza
 from pytest import raises
 from doc_data.db import mongo, write_pickle_to_mongo
 from pymongo.database import Database
@@ -7,8 +6,6 @@ from pymongo.errors import ConnectionFailure
 MONGO = "mongodb+srv://pytest:1234@pytest.ckrsn.mongodb.net/pytest?retryWrites=true&w=majority"
 PROC_DATA_PATH = "/home/silenus/docs/Academia/Doutorado/data/doc_data/tests/data/proc/"
 MONGO_ERROR_PATH = "mongodb+srv://silenus:86432@cluster0.ckrsn.mongodb.net/pytest?retryWrites=true&w=majority"
-STANZA_RESOURCES = "./stanza_resources"
-stanza.download(lang="grc", model_dir=STANZA_RESOURCES)
 
 
 def test_mongo_connection():
