@@ -1,5 +1,6 @@
 """
-Module for processing and generating the data for my PhD
+Module for processing and generating the serialized stanza datase
+from .json files of the Diorisis Corpus.
 """
 import time
 import json
