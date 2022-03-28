@@ -16,11 +16,10 @@ assert MONGO is not None
 assert STANZA_RESOURCES_DIR is not None
 
 if __name__ == "__main__":  # pragma: no cover
-    import os
     import time
     import logging
-    from tqdm import trange
-    import stanza
+    from tqdm import trange  # type: ignore
+    import stanza  # type: ignore
     from doc_data.processor import gen_data
     from doc_data.db import mongo, write_pickle_to_mongo
 
@@ -32,14 +31,14 @@ if __name__ == "__main__":  # pragma: no cover
     start = time.time()
 
     if not os.path.exists(PROC_DATA_PATH):
-        logging.warning(f"Creating {PROC_DATA_PATH}")
+        logging.warning("Creating %s", {PROC_DATA_PATH})
         os.mkdir(PROC_DATA_PATH)
 
     if not os.path.exists(STANZA_RESOURCES_DIR):
-        logging.info(f"Downloading stanza resources to: {STANZA_RESOURCES_DIR}")
+        logging.info("Downloading stanza resources to: %s", STANZA_RESOURCES_DIR)
         stanza.download(lang="grc", package="perseus", model_dir=STANZA_RESOURCES_DIR)
     elif len(os.listdir(STANZA_RESOURCES_DIR)) == 0:
-        logging.info(f"Downloading stanza resources to: {STANZA_RESOURCES_DIR}")
+        logging.info("Downloading stanza resources to: %s", STANZA_RESOURCES_DIR)
         stanza.download(lang="grc", package="perseus", model_dir=STANZA_RESOURCES_DIR)
 
     logging.info("Loading NLP Pipeline")
@@ -60,27 +59,27 @@ if __name__ == "__main__":  # pragma: no cover
         fpath = os.path.join(DIORISIS_PATH, json_file)
         opath = os.path.join(PROC_DATA_PATH, json_file.replace("json", "pickle"))
         if not os.path.exists(opath):
-            status = "New"
-            logging.info(f"Processing file {fpath}")
+            STATUS = "New"
+            logging.info("Processing file %s", fpath)
             gen_data(nlp, str(fpath), str(opath))
         else:
-            status = "Existing"
-            logging.warning(f"File {str(opath)} already existed in {PROC_DATA_PATH}")
-        pbar.set_description(f"Processed file {json_file} ({i+1}/{n_files} - {status})")
+            STATUS = "Existing"
+            logging.warning("File %s already existed in %s", str(opath), PROC_DATA_PATH)
+        pbar.set_description(f"Processed file {json_file} ({i+1}/{n_files} - {STATUS})")
         pbar.refresh()
 
     end = time.time()
-    logging.info(f"Criação de arquivos serializados {end-start_serializacao} segundos")
+    logging.info("Criação de arquivos serializados %s segundos", end-start_serializacao)
 
     start_mongo = time.time()
 
-    logging.info(f"Preparando dados de: {PROC_DATA_PATH}")
+    logging.info("Preparando dados de: %s", PROC_DATA_PATH)
     db = mongo(MONGO)
     col = db.tokens
     write_pickle_to_mongo(PROC_DATA_PATH, col)
 
     end = time.time()
-    logging.info(f"Criação do MongoDB demorou {end-start_mongo} segundos")
+    logging.info("Criação do MongoDB demorou %s segundos", end-start_mongo)
 
     end = time.time()
-    logging.info(f"Criação do completa do banco de dados demorou {end-start} segundos")
+    logging.info("Criação do completa do banco de dados demorou %s segundos", end-start)
