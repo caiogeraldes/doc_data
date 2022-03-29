@@ -1,222 +1,221 @@
-2022-03-16 18:40:15,572 - Creating ./doc_data/data/serialized/
-2022-03-16 18:40:15,572 - Loading NLP Pipeline
-2022-03-16 18:40:18,162 - Processing file ./doc_data/data/json/Aristotle (0086) - Economics (029).json
-2022-03-16 18:40:24,407 - Processing file ./doc_data/data/json/Isocrates (0010) - Archidamus (016).json
-2022-03-16 18:40:31,476 - Processing file ./doc_data/data/json/Aristophanes (0019) - Plutus (011).json
-2022-03-16 18:40:39,270 - Processing file ./doc_data/data/json/Isocrates (0010) - To Nicocles (013).json
-2022-03-16 18:40:44,511 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 1 (022).json
-2022-03-16 18:40:45,094 - Processing file ./doc_data/data/json/Aristophanes (0019) - Knights (002).json
-2022-03-16 18:40:54,351 - Processing file ./doc_data/data/json/Lysias (0540) - Defense Against a Charge of Subverting the Democracy (025).json
-2022-03-16 18:40:56,453 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Zenothemis (032).json
-2022-03-16 18:40:58,872 - Processing file ./doc_data/data/json/Demosthenes (0014) - Second Philippic (006).json
-2022-03-16 18:41:01,051 - Processing file ./doc_data/data/json/Plato (0059) - Cleitophon (029).json
-2022-03-16 18:41:02,674 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the Crown (018).json
-2022-03-16 18:41:23,680 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Leptines (020).json
-2022-03-16 18:41:35,947 - Processing file ./doc_data/data/json/Antiphon (0028) - First Tetralogy (002).json
-2022-03-16 18:41:38,484 - Processing file ./doc_data/data/json/Xenophon (0032) - On the Art of Horsemanship (013).json
-2022-03-16 18:41:45,547 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Spudias (041).json
-2022-03-16 18:41:47,625 - Processing file ./doc_data/data/json/Xenophon (0032) - Memorabilia (002).json
-2022-03-16 18:42:22,126 - Processing file ./doc_data/data/json/Aristophanes (0019) - Peace (005).json
-2022-03-16 18:42:30,284 - Processing file ./doc_data/data/json/Lysias (0540) - Against Philocrates (029).json
-2022-03-16 18:42:30,895 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Evergus And Mnesibulus (047).json
-2022-03-16 18:42:37,392 - Processing file ./doc_data/data/json/Aristotle (0086) - Metaphysics (025).json
-2022-03-16 18:43:54,197 - Processing file ./doc_data/data/json/Lysias (0540) - Against The Corn-Dealers (022).json
-2022-03-16 18:43:55,259 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the Peace (005).json
-2022-03-16 18:43:57,083 - Processing file ./doc_data/data/json/Lysias (0540) - Against Philon (031).json
-2022-03-16 18:43:58,924 - Processing file ./doc_data/data/json/Demosthenes (0014) - For Phormio (036).json
-2022-03-16 18:44:03,570 - Processing file ./doc_data/data/json/Plato (0059) - Menexenus (028).json
-2022-03-16 18:44:08,466 - Processing file ./doc_data/data/json/Plato (0059) - Symposium (011).json
-2022-03-16 18:44:25,633 - Processing file ./doc_data/data/json/Plato (0059) - Hipparchus (015).json
-2022-03-16 18:44:28,127 - Processing file ./doc_data/data/json/Plato (0059) - Lovers (016).json
-2022-03-16 18:44:30,552 - Processing file ./doc_data/data/json/Plato (0059) - Minos (033).json
-2022-03-16 18:44:33,340 - Processing file ./doc_data/data/json/Plato (0059) - Phaedrus (012).json
-2022-03-16 18:44:49,734 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the Navy-Boards (014).json
-2022-03-16 18:44:52,440 - Processing file ./doc_data/data/json/Aristotle (0086) - De somno et vigilia (042).json
-2022-03-16 18:44:57,157 - Processing file ./doc_data/data/json/Lysias (0540) - Defense in the Matter of the Olive Stump (007).json
-2022-03-16 18:44:59,083 - Processing file ./doc_data/data/json/Antiphon (0028) - Third Tetralogy (004).json
-2022-03-16 18:45:01,092 - Processing file ./doc_data/data/json/Plato (0059) - Epinomis (035).json
-2022-03-16 18:45:07,508 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Leochares (044).json
-2022-03-16 18:45:11,597 - Processing file ./doc_data/data/json/Aristotle (0086) - Analytica priora et posteriora (001).json
-2022-03-16 18:46:34,658 - Processing file ./doc_data/data/json/Lysias (0540) - Against Alcibiades 2 (015).json
-2022-03-16 18:46:35,316 - Processing file ./doc_data/data/json/Plato (0059) - Apology (002).json
-2022-03-16 18:46:43,666 - Processing file ./doc_data/data/json/Lysias (0540) - Funeral Oration (002).json
-2022-03-16 18:46:48,081 - Processing file ./doc_data/data/json/Thucydides (0003) - History (001).json
-2022-03-16 18:49:36,323 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Boeotus 1 (039).json
-2022-03-16 18:49:39,621 - Processing file ./doc_data/data/json/Xenophon (0032) - Hellenica (001).json
-2022-03-16 18:50:46,317 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the Public Fund (013).json
-2022-03-16 18:50:48,758 - Processing file ./doc_data/data/json/Plato (0059) - Protagoras (022).json
-2022-03-16 18:51:06,473 - Processing file ./doc_data/data/json/Aristotle (0086) - De longitudine et brevitate vitae (020).json
-2022-03-16 18:51:09,858 - Processing file ./doc_data/data/json/Aristophanes (0019) - Wasps (004).json
-2022-03-16 18:51:19,897 - Processing file ./doc_data/data/json/Aristotle (0086) - Politics (035).json
-2022-03-16 18:52:27,451 - Processing file ./doc_data/data/json/Aristophanes (0019) - Frogs (009).json
-2022-03-16 18:52:37,010 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 3 (030).json
-2022-03-16 18:52:37,452 - Processing file ./doc_data/data/json/Isocrates (0010) - Against Lochites (003).json
-2022-03-16 18:52:38,737 - Processing file ./doc_data/data/json/Lysias (0540) - Against Andocides (006).json
-2022-03-16 18:52:41,236 - Processing file ./doc_data/data/json/Plato (0059) - Timaeus (031).json
-2022-03-16 18:53:08,321 - Processing file ./doc_data/data/json/Aristophanes (0019) - Thesmophoriazusae (008).json
-2022-03-16 18:53:15,909 - Processing file ./doc_data/data/json/Demosthenes (0014) - Third Olynthiac (003).json
-2022-03-16 18:53:18,269 - Processing file ./doc_data/data/json/Demosthenes (0014) - On The Trierarchic Crown (051).json
-2022-03-16 18:53:19,717 - Processing file ./doc_data/data/json/Isocrates (0010) - To Philip (020).json
-2022-03-16 18:53:30,160 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Nausimachus and Xenopeithes (038).json
-2022-03-16 18:53:33,086 - Processing file ./doc_data/data/json/Plato (0059) - Hippias Minor (026).json
-2022-03-16 18:53:37,419 - Processing file ./doc_data/data/json/Isocrates (0010) - On the Peace (017).json
-2022-03-16 18:53:46,514 - Processing file ./doc_data/data/json/Isocrates (0010) - Nicocles or the Cyprians (014).json
-2022-03-16 18:53:50,805 - Processing file ./doc_data/data/json/Demosthenes (0014) - Philip's Letter (012).json
-2022-03-16 18:53:52,270 - Processing file ./doc_data/data/json/Antiphon (0028) - On the Choreutes (006).json
-2022-03-16 18:53:55,661 - Processing file ./doc_data/data/json/Lysias (0540) - Defense Against A Charge Of Taking Bribes (021).json
-2022-03-16 18:53:57,016 - Processing file ./doc_data/data/json/Plato (0059) - Sophist (007).json
-2022-03-16 18:54:12,263 - Processing file ./doc_data/data/json/Isocrates (0010) - Areopagiticus (018).json
-2022-03-16 18:54:17,008 - Processing file ./doc_data/data/json/Plato (0059) - Gorgias (023).json
-2022-03-16 18:54:42,569 - Processing file ./doc_data/data/json/Plato (0059) - Laches (019).json
-2022-03-16 18:54:49,804 - Processing file ./doc_data/data/json/Demosthenes (0014) - The Funeral Speech 51-61 (060).json
-2022-03-16 18:54:52,239 - Processing file ./doc_data/data/json/Xenophon (0032) - Agesilaus (009).json
-2022-03-16 18:54:59,218 - Processing file ./doc_data/data/json/Lysias (0540) - Against Theomnestus 2 (011).json
-2022-03-16 18:54:59,791 - Processing file ./doc_data/data/json/Aristotle (0086) - Eudemian Ethics (009).json
-2022-03-16 18:55:25,385 - Processing file ./doc_data/data/json/Xenophon (0032) - Hiero (008).json
-2022-03-16 18:55:31,389 - Processing file ./doc_data/data/json/Antiphon (0028) - Second Tetralogy (003).json
-2022-03-16 18:55:33,571 - Processing file ./doc_data/data/json/Plato (0059) - Critias (032).json
-2022-03-16 18:55:39,697 - Processing file ./doc_data/data/json/Aristotle (0086) - Nicomachean Ethics (010).json
-2022-03-16 18:56:32,133 - Processing file ./doc_data/data/json/Aristophanes (0019) - Birds (006).json
-2022-03-16 18:56:43,290 - Processing file ./doc_data/data/json/Demosthenes (0014) - Apollodorus Against Callipus (052).json
-2022-03-16 18:56:46,507 - Processing file ./doc_data/data/json/Demosthenes (Apollodorus) (0014) - Against Neaera (059).json
-2022-03-16 18:56:58,352 - Processing file ./doc_data/data/json/Lysias (0540) - In Defense of Mantitheus (016).json
-2022-03-16 18:56:59,574 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Aristogeiton 1 (025).json
-2022-03-16 18:57:06,417 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 4 (029).json
-2022-03-16 18:57:07,355 - Processing file ./doc_data/data/json/Demosthenes (0014) - The Erotic Essay (061).json
-2022-03-16 18:57:11,325 - Processing file ./doc_data/data/json/Plato (0059) - Euthyphro (001).json
-2022-03-16 18:57:16,111 - Processing file ./doc_data/data/json/Plato (0059) - Epistles (036).json
-2022-03-16 18:57:33,656 - Processing file ./doc_data/data/json/Lysias (0540) - For Polystratus (020).json
-2022-03-16 18:57:35,485 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 2 (027).json
-2022-03-16 18:57:36,964 - Processing file ./doc_data/data/json/Plato (0059) - Hippias Major (025).json
-2022-03-16 18:57:44,597 - Processing file ./doc_data/data/json/Aristotle (0086) - De juventute et senectute, De vita et morte (018).json
-2022-03-16 18:57:47,941 - Processing file ./doc_data/data/json/Plato (0059) - Charmides (018).json
-2022-03-16 18:57:55,844 - Processing file ./doc_data/data/json/Plato (0059) - Crito (003).json
-2022-03-16 18:58:00,683 - Processing file ./doc_data/data/json/Isocrates (0010) - Busiris (010).json
-2022-03-16 18:58:03,763 - Processing file ./doc_data/data/json/Aristotle (0086) - Ars Poetica (034).json
-2022-03-16 18:58:16,434 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Onetor 2 (031).json
-2022-03-16 18:58:17,446 - Processing file ./doc_data/data/json/Aristotle (0086) - De memoria et reminiscentia (024).json
-2022-03-16 18:58:20,763 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Dionysodorus (056).json
-2022-03-16 18:58:24,375 - Processing file ./doc_data/data/json/Isocrates (0010) - Helen (009).json
-2022-03-16 18:58:28,748 - Processing file ./doc_data/data/json/Aristophanes (0019) - Ecclesiazusae (010).json
-2022-03-16 18:58:36,388 - Processing file ./doc_data/data/json/Aristotle (0086) - De Interpretatione (017).json
-2022-03-16 18:58:44,290 - Processing file ./doc_data/data/json/Isocrates (0010) - Panegyricus (011).json
-2022-03-16 18:58:56,232 - Processing file ./doc_data/data/json/Aristophanes (0019) - Lysistrata (007).json
-2022-03-16 18:59:04,306 - Processing file ./doc_data/data/json/Aristotle (0086) - Athenian Constitution (003).json
-2022-03-16 18:59:23,942 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Eubulides (057).json
-2022-03-16 18:59:28,705 - Processing file ./doc_data/data/json/Plato (0059) - Republic (030).json
-2022-03-16 19:01:06,481 - Processing file ./doc_data/data/json/Plato (0059) - Alcibiades 1 (013).json
-2022-03-16 19:01:16,746 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Aristogeiton 2 (026).json
-2022-03-16 19:01:18,624 - Processing file ./doc_data/data/json/Isocrates (0010) - Aegineticus (006).json
-2022-03-16 19:01:21,828 - Processing file ./doc_data/data/json/Demosthenes (0014) - Third Philippic (009).json
-2022-03-16 19:01:26,581 - Processing file ./doc_data/data/json/Plato (0059) - Statesman (008).json
-2022-03-16 19:01:44,643 - Processing file ./doc_data/data/json/Lysias (0540) - Against Eratosthenes (012).json
-2022-03-16 19:01:49,391 - Processing file ./doc_data/data/json/Plato (0059) - Lysis (020).json
-2022-03-16 19:01:56,379 - Processing file ./doc_data/data/json/Plato (0059) - Phaedo (004).json
-2022-03-16 19:02:18,515 - Processing file ./doc_data/data/json/Aristotle (0086) - De Insomniis (016).json
-2022-03-16 19:02:21,321 - Processing file ./doc_data/data/json/Isocrates (0010) - Panathenaicus (021).json
-2022-03-16 19:02:40,705 - Processing file ./doc_data/data/json/Herodotus (0016) - Histories (001).json
-2022-03-16 19:05:33,474 - Processing file ./doc_data/data/json/Lysias (0540) - Against Epicrates and his Fellow-envoys (027).json
-2022-03-16 19:05:34,260 - Processing file ./doc_data/data/json/Isocrates (0010) - To Demonicus (007).json
-2022-03-16 19:05:37,548 - Processing file ./doc_data/data/json/Plato (0059) - Euthydemus (021).json
-2022-03-16 19:05:49,263 - Processing file ./doc_data/data/json/Lysias (0540) - On The Refusal Of A Pension (024).json
-2022-03-16 19:05:50,571 - Processing file ./doc_data/data/json/Antiphon (0028) - On the Murder of Herodes (005).json
-2022-03-16 19:05:56,273 - Processing file ./doc_data/data/json/Plato (0059) - Cratylus (005).json
-2022-03-16 19:06:13,049 - Processing file ./doc_data/data/json/Demosthenes (0014) - On Halonnesus (007).json
-2022-03-16 19:06:16,004 - Processing file ./doc_data/data/json/Lysias (0540) - On the Confiscation of the Property Of The Brother Of Nicias (018).json
-2022-03-16 19:06:17,441 - Processing file ./doc_data/data/json/Isocrates (0010) - Against the Sophists (008).json
-2022-03-16 19:06:18,905 - Processing file ./doc_data/data/json/Plato (0059) - Laws (034).json
-2022-03-16 19:08:14,072 - Processing file ./doc_data/data/json/Lysias (0540) - On A Wound By Premeditation (004).json
-2022-03-16 19:08:14,960 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Aristocrates (023).json
-2022-03-16 19:08:32,791 - Processing file ./doc_data/data/json/Plato (0059) - Meno (024).json
-2022-03-16 19:08:41,825 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the Accession of Alexander (017).json
-2022-03-16 19:08:43,967 - Processing file ./doc_data/data/json/Demosthenes (0014) - For the Liberty of the Rhodians (015).json
-2022-03-16 19:08:46,259 - Processing file ./doc_data/data/json/Lysias (0540) - For The Soldier (009).json
-2022-03-16 19:08:47,142 - Processing file ./doc_data/data/json/Isocrates (0010) - Against Callimachus (002).json
-2022-03-16 19:08:51,367 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Lacritus (035).json
-2022-03-16 19:08:55,730 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Timocrates (024).json
-2022-03-16 19:09:12,413 - Processing file ./doc_data/data/json/Isocrates (0010) - Antidosis (019).json
-2022-03-16 19:09:31,786 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 9 (024).json
-2022-03-16 19:09:33,110 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Phormio (034).json
-2022-03-16 19:09:36,581 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Boeotus 2 (040).json
-2022-03-16 19:09:42,556 - Processing file ./doc_data/data/json/Lysias (0540) - Against Alcibiades 1 (014).json
-2022-03-16 19:09:45,154 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 6 (023).json
-2022-03-16 19:09:45,962 - Processing file ./doc_data/data/json/Antiphon (0028) - Prosecution Of The Stepmother For Poisoning (001).json
-2022-03-16 19:09:47,639 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 7 (026).json
-2022-03-16 19:09:48,586 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Apaturius (033).json
-2022-03-16 19:09:51,311 - Processing file ./doc_data/data/json/Xenophon (0032) - Cyropaedia (007).json
-2022-03-16 19:11:05,498 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the Chersonese (008).json
-2022-03-16 19:11:10,357 - Processing file ./doc_data/data/json/Plato (0059) - Ion (027).json
-2022-03-16 19:11:14,349 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Theocrines (058).json
-2022-03-16 19:11:19,845 - Processing file ./doc_data/data/json/Plato (0059) - Theaetetus (006).json
-2022-03-16 19:11:41,715 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 5 (028).json
-2022-03-16 19:11:42,028 - Processing file ./doc_data/data/json/Lysias (0540) - Against Ergocles (028).json
-2022-03-16 19:11:43,025 - Processing file ./doc_data/data/json/Lysias (0540) - Against Diogeiton (032).json
-2022-03-16 19:11:44,954 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Phaenippus (042).json
-2022-03-16 19:11:47,546 - Processing file ./doc_data/data/json/Demosthenes (Apollodorus) (0014) - Against Stephanus 1 (045).json
-2022-03-16 19:11:53,618 - Processing file ./doc_data/data/json/Lysias (0540) - Against Simon (003).json
-2022-03-16 19:11:56,185 - Processing file ./doc_data/data/json/Lysias (0540) - Accusation of Calumny (008).json
-2022-03-16 19:11:57,612 - Processing file ./doc_data/data/json/Demosthenes (0014) - First Philippic (004).json
-2022-03-16 19:12:02,631 - Processing file ./doc_data/data/json/Plato (0059) - Alcibiades 2 (014).json
-2022-03-16 19:12:06,901 - Processing file ./doc_data/data/json/Isocrates (0010) - Against Euthynus (001).json
-2022-03-16 19:12:08,082 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Macartatus (043).json
-2022-03-16 19:12:15,853 - Processing file ./doc_data/data/json/Demosthenes (0014) - On the False Embassy (019).json
-2022-03-16 19:12:41,293 - Processing file ./doc_data/data/json/Xenophon (0032) - Economics (003).json
-2022-03-16 19:12:58,828 - Processing file ./doc_data/data/json/Lysias (0540) - Against Nicomachus (030).json
-2022-03-16 19:13:00,891 - Processing file ./doc_data/data/json/Plato (0059) - Philebus (010).json
-2022-03-16 19:13:18,916 - Processing file ./doc_data/data/json/Demosthenes (0014) - For the Megalopolitans (016).json
-2022-03-16 19:13:20,916 - Processing file ./doc_data/data/json/Isocrates (0010) - Trapeziticus (005).json
-2022-03-16 19:13:24,572 - Processing file ./doc_data/data/json/Xenophon (0032) - Ways and Means (011).json
-2022-03-16 19:13:28,456 - Processing file ./doc_data/data/json/Aristotle (0086) - De Sensu et Sensibilibus (041).json
-2022-03-16 19:13:40,872 - Processing file ./doc_data/data/json/Demosthenes (0014) - Apollodorus Against Polycles (050).json
-2022-03-16 19:13:46,934 - Processing file ./doc_data/data/json/Lysias (0540) - Against Theomnestus 1 (010).json
-2022-03-16 19:13:48,765 - Processing file ./doc_data/data/json/Isocrates (0010) - Evagoras (015).json
-2022-03-16 19:13:54,283 - Processing file ./doc_data/data/json/Xenophon (0032) - Symposium (004).json
-2022-03-16 19:14:03,294 - Processing file ./doc_data/data/json/Aristotle (0086) - Virtues and Vices (045).json
-2022-03-16 19:14:05,041 - Processing file ./doc_data/data/json/Lysias (0540) - Against Agoratus (013).json
-2022-03-16 19:14:09,703 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Androtion (022).json
-2022-03-16 19:14:15,644 - Processing file ./doc_data/data/json/Lysias (0540) - Against Pancleon (023).json
-2022-03-16 19:14:16,400 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Aphobus 2 (028).json
-2022-03-16 19:14:18,078 - Processing file ./doc_data/data/json/Lysias (0540) - Against The Subversion of the Ancestral Constitution (034).json
-2022-03-16 19:14:18,719 - Processing file ./doc_data/data/json/Isocrates (0010) - Plataicus (012).json
-2022-03-16 19:14:22,268 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Aphobus 1 (027).json
-2022-03-16 19:14:27,542 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Callicles (055).json
-2022-03-16 19:14:30,056 - Processing file ./doc_data/data/json/Lysias (0540) - On the Murder of Eratosthenes (001).json
-2022-03-16 19:14:32,509 - Processing file ./doc_data/data/json/Lysias (0540) - On The Property Of Eraton (017).json
-2022-03-16 19:14:33,114 - Processing file ./doc_data/data/json/Demosthenes (0014) - First Olynthiac (001).json
-2022-03-16 19:14:35,101 - Processing file ./doc_data/data/json/Demosthenes (Apollodorus) (0014) - Against Stephanus 2 (046).json
-2022-03-16 19:14:37,618 - Processing file ./doc_data/data/json/Demosthenes (0014) - Second Olynthiac (002).json
-2022-03-16 19:14:39,793 - Processing file ./doc_data/data/json/Aristotle (0086) - Categories (006).json
-2022-03-16 19:14:57,246 - Processing file ./doc_data/data/json/Aristotle (0086) - De Mundo (028).json
-2022-03-16 19:15:08,678 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Olympiodorus (048).json
-2022-03-16 19:15:13,268 - Processing file ./doc_data/data/json/Aristophanes (0019) - Clouds (003).json
-2022-03-16 19:15:24,943 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Conon (054).json
-2022-03-16 19:15:30,063 - Processing file ./doc_data/data/json/Demosthenes (0014) - Apollodorus Against Nicostratus (053).json
-2022-03-16 19:15:34,058 - Processing file ./doc_data/data/json/Aristotle (0086) - De divinatione per somnum (008).json
-2022-03-16 19:15:35,981 - Processing file ./doc_data/data/json/Lysias (0540) - Olympic Oration (033).json
-2022-03-16 19:15:37,058 - Processing file ./doc_data/data/json/Demosthenes (0014) - Apollodorus Against Timotheus (049).json
-2022-03-16 19:15:43,439 - Processing file ./doc_data/data/json/Aristotle (0086) - Rhetoric (038).json
-2022-03-16 19:16:38,008 - Processing file ./doc_data/data/json/Xenophon (0032) - Constitution of the Lacedaemonians (010).json
-2022-03-16 19:16:45,253 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Onetor 1 (030).json
-2022-03-16 19:16:48,553 - Processing file ./doc_data/data/json/Xenophon (0032) - Anabasis (006).json
-2022-03-16 19:18:00,662 - Processing file ./doc_data/data/json/Lysias (0540) - On the Scrutiny of Evandros (026).json
-2022-03-16 19:18:03,295 - Processing file ./doc_data/data/json/Aristophanes (0019) - Acharnians (001).json
-2022-03-16 19:18:13,072 - Processing file ./doc_data/data/json/Aristotle (0086) - De Respiratione (037).json
-2022-03-16 19:18:22,449 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Aphobus 3 (029).json
-2022-03-16 19:18:27,081 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Pantaenetus (037).json
-2022-03-16 19:18:31,461 - Processing file ./doc_data/data/json/Lysias (0540) - On the Property of Aristophanes (019).json
-2022-03-16 19:18:34,509 - Processing file ./doc_data/data/json/Plato (0059) - Parmenides (009).json
-2022-03-16 19:18:48,393 - Processing file ./doc_data/data/json/Demosthenes (0014) - Answer to Philip's Letter (011).json
-2022-03-16 19:18:49,967 - Processing file ./doc_data/data/json/Demosthenes (0014) - Fourth Philippic (010).json
-2022-03-16 19:18:55,265 - Processing file ./doc_data/data/json/Aristotle (0086) - Oeconomica II (029).json
-2022-03-16 19:19:01,993 - Processing file ./doc_data/data/json/Xenophon (0032) - On the Cavalry Commander (012).json
-2022-03-16 19:19:08,337 - Processing file ./doc_data/data/json/Isocrates (0010) - Letter 8 (025).json
-2022-03-16 19:19:09,202 - Processing file ./doc_data/data/json/Plato (0059) - Theages (017).json
-2022-03-16 19:19:13,136 - Processing file ./doc_data/data/json/Xenophon (0032) - Apology (005).json
-2022-03-16 19:19:15,422 - Processing file ./doc_data/data/json/Demosthenes (0014) - Against Meidias (021).json
-2022-03-16 19:19:34,863 - Processing file ./doc_data/data/json/Lysias (0540) - For Callias (005).json
-2022-03-16 19:19:35,182 - Processing file ./doc_data/data/json/Isocrates (0010) - Concerning the Team of Horses (004).json
-2022-03-16 19:19:39,720 - Processing file ./doc_data/data/json/Xenophon (0032) - On Hunting (014).json
-2022-03-16 19:19:48,967 - Criação de arquivos serializados 2370.805955171585 segundos
-2022-03-16 19:19:48,967 - Preparando dados de: ./doc_data/data/serialized/
-2022-03-16 20:12:26,644 - Criação do MongoDB demorou 3157.676200866699 segundos
-2022-03-16 20:12:26,682 - Criação do completa do banco de dados demorou 5531.109409570694 segundos
+2022-03-28 20:43:41,217 - Loading NLP Pipeline
+2022-03-28 20:43:41,897 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the Peace (005).json
+2022-03-28 20:43:46,955 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Apaturius (033).json
+2022-03-28 20:43:54,717 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Symposium (004).json
+2022-03-28 20:44:25,223 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On the Property of Aristophanes (019).json
+2022-03-28 20:44:34,573 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Areopagiticus (018).json
+2022-03-28 20:44:49,110 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Sophist (007).json
+2022-03-28 20:45:34,561 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Defense Against a Charge of Subverting the Democracy (025).json
+2022-03-28 20:45:40,747 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Acharnians (001).json
+2022-03-28 20:46:02,348 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Alcibiades 2 (014).json
+2022-03-28 20:46:14,707 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De Interpretatione (017).json
+2022-03-28 20:46:34,034 - Processing file /home/silenus/proj/doc_data/data/json/Antiphon (0028) - First Tetralogy (002).json
+2022-03-28 20:46:41,318 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Simon (003).json
+2022-03-28 20:46:48,335 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Menexenus (028).json
+2022-03-28 20:47:02,367 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Plutus (011).json
+2022-03-28 20:47:25,186 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Timaeus (031).json
+2022-03-28 20:48:38,453 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the Navy-Boards (014).json
+2022-03-28 20:48:46,127 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Metaphysics (025).json
+2022-03-28 20:52:21,297 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Athenian Constitution (003).json
+2022-03-28 20:53:15,501 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Leochares (044).json
+2022-03-28 20:53:27,809 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Aristogeiton 2 (026).json
+2022-03-28 20:53:33,270 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Answer to Philip's Letter (011).json
+2022-03-28 20:53:37,573 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Accusation of Calumny (008).json
+2022-03-28 20:53:40,606 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Republic (030).json
+2022-03-28 20:58:10,001 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Apollodorus Against Timotheus (049).json
+2022-03-28 20:58:25,034 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Alcibiades 1 (013).json
+2022-03-28 20:58:53,967 - Processing file /home/silenus/proj/doc_data/data/json/Thucydides (0003) - History (001).json
+2022-03-28 21:06:52,523 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 1 (022).json
+2022-03-28 21:06:54,511 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De juventute et senectute, De vita et morte (018).json
+2022-03-28 21:07:01,183 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De Insomniis (016).json
+2022-03-28 21:07:08,273 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - In Defense of Mantitheus (016).json
+2022-03-28 21:07:12,032 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Funeral Oration (002).json
+2022-03-28 21:07:25,331 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Lovers (016).json
+2022-03-28 21:07:32,800 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Olympic Oration (033).json
+2022-03-28 21:07:34,190 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 3 (030).json
+2022-03-28 21:07:35,444 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Categories (006).json
+2022-03-28 21:08:09,894 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Hippias Major (025).json
+2022-03-28 21:08:33,241 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - On the Art of Horsemanship (013).json
+2022-03-28 21:08:53,152 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Philocrates (029).json
+2022-03-28 21:08:55,188 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De Respiratione (037).json
+2022-03-28 21:09:13,713 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De Mundo (028).json
+2022-03-28 21:09:37,810 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Symposium (011).json
+2022-03-28 21:10:28,333 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Anabasis (006).json
+2022-03-28 21:13:08,632 - Processing file /home/silenus/proj/doc_data/data/json/Antiphon (0028) - On the Murder of Herodes (005).json
+2022-03-28 21:13:26,364 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - On Hunting (014).json
+2022-03-28 21:13:53,296 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Against Callimachus (002).json
+2022-03-28 21:14:05,293 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Archidamus (016).json
+2022-03-28 21:14:26,202 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Conon (054).json
+2022-03-28 21:14:37,138 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Apollodorus Against Callipus (052).json
+2022-03-28 21:14:44,573 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Spudias (041).json
+2022-03-28 21:14:50,689 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Protagoras (022).json
+2022-03-28 21:15:42,582 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - On the Peace (017).json
+2022-03-28 21:16:09,143 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Leptines (020).json
+2022-03-28 21:16:43,302 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Agoratus (013).json
+2022-03-28 21:16:57,506 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Trapeziticus (005).json
+2022-03-28 21:17:08,330 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Panegyricus (011).json
+2022-03-28 21:17:43,706 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Phaedo (004).json
+2022-03-28 21:18:47,096 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Eudemian Ethics (009).json
+2022-03-28 21:20:00,718 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Economics (029).json
+2022-03-28 21:20:19,380 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Theages (017).json
+2022-03-28 21:20:30,167 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Ecclesiazusae (010).json
+2022-03-28 21:20:53,061 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Apollodorus Against Polycles (050).json
+2022-03-28 21:21:09,085 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - The Funeral Speech 51-61 (060).json
+2022-03-28 21:21:16,589 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On the Murder of Eratosthenes (001).json
+2022-03-28 21:21:23,640 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Androtion (022).json
+2022-03-28 21:21:40,671 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 8 (025).json
+2022-03-28 21:21:42,905 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Knights (002).json
+2022-03-28 21:22:09,570 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (Apollodorus) (0014) - Against Neaera (059).json
+2022-03-28 21:22:41,626 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Euthydemus (021).json
+2022-03-28 21:23:17,248 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Timocrates (024).json
+2022-03-28 21:24:03,473 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Nicocles or the Cyprians (014).json
+2022-03-28 21:24:15,681 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Aristogeiton 1 (025).json
+2022-03-28 21:24:35,765 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Boeotus 2 (040).json
+2022-03-28 21:24:49,817 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Cyropaedia (007).json
+2022-03-28 21:28:36,119 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Lysis (020).json
+2022-03-28 21:28:57,663 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Aegineticus (006).json
+2022-03-28 21:29:07,380 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (Apollodorus) (0014) - Against Stephanus 2 (046).json
+2022-03-28 21:29:14,105 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Economics (003).json
+2022-03-28 21:30:08,143 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 9 (024).json
+2022-03-28 21:30:12,329 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Nausimachus and Xenopeithes (038).json
+2022-03-28 21:30:19,396 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Peace (005).json
+2022-03-28 21:30:43,966 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Macartatus (043).json
+2022-03-28 21:31:05,215 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Nicomachus (030).json
+2022-03-28 21:31:11,587 - Processing file /home/silenus/proj/doc_data/data/json/Herodotus (0016) - Histories (001).json
+2022-03-28 21:40:11,953 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Eratosthenes (012).json
+2022-03-28 21:40:26,827 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Hippias Minor (026).json
+2022-03-28 21:40:40,096 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On the Confiscation of the Property Of The Brother Of Nicias (018).json
+2022-03-28 21:40:44,433 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the Chersonese (008).json
+2022-03-28 21:40:57,926 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (Apollodorus) (0014) - Against Stephanus 1 (045).json
+2022-03-28 21:41:15,575 - Processing file /home/silenus/proj/doc_data/data/json/Antiphon (0028) - Third Tetralogy (004).json
+2022-03-28 21:41:21,520 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Aphobus 1 (027).json
+2022-03-28 21:41:36,681 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Theocrines (058).json
+2022-03-28 21:41:52,159 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Apollodorus Against Nicostratus (053).json
+2022-03-28 21:41:58,841 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Onetor 1 (030).json
+2022-03-28 21:42:06,902 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - The Erotic Essay (061).json
+2022-03-28 21:42:18,637 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Against the Sophists (008).json
+2022-03-28 21:42:22,958 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Phaedrus (012).json
+2022-03-28 21:43:11,354 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Epistles (036).json
+2022-03-28 21:44:03,092 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Ergocles (028).json
+2022-03-28 21:44:06,103 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Gorgias (023).json
+2022-03-28 21:45:22,391 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Ways and Means (011).json
+2022-03-28 21:45:34,005 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - On the Cavalry Commander (012).json
+2022-03-28 21:45:51,381 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Alcibiades 1 (014).json
+2022-03-28 21:45:59,336 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Panathenaicus (021).json
+2022-03-28 21:46:53,489 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - For the Liberty of the Rhodians (015).json
+2022-03-28 21:47:00,613 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - To Demonicus (007).json
+2022-03-28 21:47:09,374 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Zenothemis (032).json
+2022-03-28 21:47:15,745 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Pancleon (023).json
+2022-03-28 21:47:18,352 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the Accession of Alexander (017).json
+2022-03-28 21:47:24,159 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De divinatione per somnum (008).json
+2022-03-28 21:47:28,334 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Apology (002).json
+2022-03-28 21:47:53,651 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Oeconomica II (029).json
+2022-03-28 21:48:10,684 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On A Wound By Premeditation (004).json
+2022-03-28 21:48:13,387 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - For Callias (005).json
+2022-03-28 21:48:14,437 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against The Subversion of the Ancestral Constitution (034).json
+2022-03-28 21:48:16,394 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Critias (032).json
+2022-03-28 21:48:32,605 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Philon (031).json
+2022-03-28 21:48:38,492 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Cleitophon (029).json
+2022-03-28 21:48:43,285 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On The Refusal Of A Pension (024).json
+2022-03-28 21:48:47,788 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Minos (033).json
+2022-03-28 21:48:56,262 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Clouds (003).json
+2022-03-28 21:49:25,144 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Boeotus 1 (039).json
+2022-03-28 21:49:33,969 - Processing file /home/silenus/proj/doc_data/data/json/Antiphon (0028) - Second Tetralogy (003).json
+2022-03-28 21:49:40,635 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Apology (005).json
+2022-03-28 21:49:46,822 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Frogs (009).json
+2022-03-28 21:50:14,933 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Statesman (008).json
+2022-03-28 21:51:07,277 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the Crown (018).json
+2022-03-28 21:52:07,505 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Theaetetus (006).json
+2022-03-28 21:53:11,932 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On Halonnesus (007).json
+2022-03-28 21:53:20,548 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the False Embassy (019).json
+2022-03-28 21:54:32,047 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De longitudine et brevitate vitae (020).json
+2022-03-28 21:54:38,801 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Hellenica (001).json
+2022-03-28 21:58:02,164 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Virtues and Vices (045).json
+2022-03-28 21:58:07,796 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 5 (028).json
+2022-03-28 21:58:08,745 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Agesilaus (009).json
+2022-03-28 21:58:30,520 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Dionysodorus (056).json
+2022-03-28 21:58:41,273 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Fourth Philippic (010).json
+2022-03-28 21:58:55,095 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Crito (003).json
+2022-03-28 21:59:08,418 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - To Nicocles (013).json
+2022-03-28 21:59:20,455 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Constitution of the Lacedaemonians (010).json
+2022-03-28 21:59:35,199 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Charmides (018).json
+2022-03-28 21:59:58,814 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De Sensu et Sensibilibus (041).json
+2022-03-28 22:00:25,640 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Thesmophoriazusae (008).json
+2022-03-28 22:00:47,622 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Birds (006).json
+2022-03-28 22:01:19,816 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De memoria et reminiscentia (024).json
+2022-03-28 22:01:27,837 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Laches (019).json
+2022-03-28 22:01:49,893 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - For the Megalopolitans (016).json
+2022-03-28 22:01:55,836 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Callicles (055).json
+2022-03-28 22:02:02,989 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On the Scrutiny of Evandros (026).json
+2022-03-28 22:02:07,270 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Onetor 2 (031).json
+2022-03-28 22:02:10,576 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Pantaenetus (037).json
+2022-03-28 22:02:23,046 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Philebus (010).json
+2022-03-28 22:03:15,130 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Nicomachean Ethics (010).json
+2022-03-28 22:05:52,618 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 4 (029).json
+2022-03-28 22:05:55,399 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Epicrates and his Fellow-envoys (027).json
+2022-03-28 22:05:57,781 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Analytica priora et posteriora (001).json
+2022-03-28 22:09:18,016 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 2 (027).json
+2022-03-28 22:09:22,596 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Antidosis (019).json
+2022-03-28 22:10:20,469 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Theomnestus 2 (011).json
+2022-03-28 22:10:22,093 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Meidias (021).json
+2022-03-28 22:11:09,259 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Second Philippic (006).json
+2022-03-28 22:11:15,747 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Olympiodorus (048).json
+2022-03-28 22:11:27,201 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Parmenides (009).json
+2022-03-28 22:12:07,544 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Phaenippus (042).json
+2022-03-28 22:12:14,871 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Wasps (004).json
+2022-03-28 22:12:44,512 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - For Phormio (036).json
+2022-03-28 22:12:57,788 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Third Olynthiac (003).json
+2022-03-28 22:13:05,325 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Evergus And Mnesibulus (047).json
+2022-03-28 22:13:23,682 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Helen (009).json
+2022-03-28 22:13:36,296 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Rhetoric (038).json
+2022-03-28 22:15:43,544 - Processing file /home/silenus/proj/doc_data/data/json/Aristophanes (0019) - Lysistrata (007).json
+2022-03-28 22:16:08,431 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Aristocrates (023).json
+2022-03-28 22:16:58,352 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Alcibiades 2 (015).json
+2022-03-28 22:17:00,301 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against The Corn-Dealers (022).json
+2022-03-28 22:17:03,942 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Aphobus 2 (028).json
+2022-03-28 22:17:08,985 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Hipparchus (015).json
+2022-03-28 22:17:16,240 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Theomnestus 1 (010).json
+2022-03-28 22:17:21,243 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Ars Poetica (034).json
+2022-03-28 22:17:54,932 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - On The Property Of Eraton (017).json
+2022-03-28 22:17:56,884 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Against Lochites (003).json
+2022-03-28 22:18:00,639 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - For The Soldier (009).json
+2022-03-28 22:18:03,409 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Cratylus (005).json
+2022-03-28 22:18:54,309 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 7 (026).json
+2022-03-28 22:18:57,137 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On the Public Fund (013).json
+2022-03-28 22:19:04,731 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Eubulides (057).json
+2022-03-28 22:19:19,783 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Laws (034).json
+2022-03-28 22:24:43,232 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Defense Against A Charge Of Taking Bribes (021).json
+2022-03-28 22:24:47,446 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Diogeiton (032).json
+2022-03-28 22:24:53,429 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - Politics (035).json
+2022-03-28 22:28:13,434 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Aphobus 3 (029).json
+2022-03-28 22:28:26,947 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Busiris (010).json
+2022-03-28 22:28:36,111 - Processing file /home/silenus/proj/doc_data/data/json/Antiphon (0028) - Prosecution Of The Stepmother For Poisoning (001).json
+2022-03-28 22:28:41,535 - Processing file /home/silenus/proj/doc_data/data/json/Antiphon (0028) - On the Choreutes (006).json
+2022-03-28 22:28:51,767 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - First Olynthiac (001).json
+2022-03-28 22:28:57,915 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Second Olynthiac (002).json
+2022-03-28 22:29:04,194 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - First Philippic (004).json
+2022-03-28 22:29:15,760 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Meno (024).json
+2022-03-28 22:29:43,698 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Concerning the Team of Horses (004).json
+2022-03-28 22:29:53,786 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Third Philippic (009).json
+2022-03-28 22:30:08,020 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Against Andocides (006).json
+2022-03-28 22:30:16,256 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Euthyphro (001).json
+2022-03-28 22:30:31,131 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Evagoras (015).json
+2022-03-28 22:30:46,666 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - To Philip (020).json
+2022-03-28 22:31:16,733 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Letter 6 (023).json
+2022-03-28 22:31:19,528 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Philip's Letter (012).json
+2022-03-28 22:31:24,227 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Against Euthynus (001).json
+2022-03-28 22:31:27,893 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Phormio (034).json
+2022-03-28 22:31:38,074 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Memorabilia (002).json
+2022-03-28 22:33:23,817 - Processing file /home/silenus/proj/doc_data/data/json/Isocrates (0010) - Plataicus (012).json
+2022-03-28 22:33:34,851 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Ion (027).json
+2022-03-28 22:33:46,855 - Processing file /home/silenus/proj/doc_data/data/json/Xenophon (0032) - Hiero (008).json
+2022-03-28 22:34:05,149 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - Defense in the Matter of the Olive Stump (007).json
+2022-03-28 22:34:11,296 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - On The Trierarchic Crown (051).json
+2022-03-28 22:34:15,886 - Processing file /home/silenus/proj/doc_data/data/json/Demosthenes (0014) - Against Lacritus (035).json
+2022-03-28 22:34:28,483 - Processing file /home/silenus/proj/doc_data/data/json/Lysias (0540) - For Polystratus (020).json
+2022-03-28 22:34:34,256 - Processing file /home/silenus/proj/doc_data/data/json/Plato (0059) - Epinomis (035).json
+2022-03-28 22:34:53,591 - Processing file /home/silenus/proj/doc_data/data/json/Aristotle (0086) - De somno et vigilia (042).json
+2022-03-28 22:35:04,381 - Criação de arquivos serializados 6682.493767023087 segundos
+2022-03-28 22:35:04,381 - Preparando dados de: /home/silenus/proj/doc_data/data/serialized/
+2022-03-28 23:12:08,307 - Criação do MongoDB demorou 2223.9258959293365 segundos
+2022-03-28 23:12:08,307 - Criação do completa do banco de dados demorou 8907.090175390244 segundos
