@@ -1,4 +1,4 @@
-lemma,freq,ctxfreq,xobj_case,personal,impersonal,modal_semantics,personal_valid,impersonal_valid,lsj_entry,opt_acc,short_def,cmt
+lemma,freq,ctxfreq,xobj_case,personal,impersonal,modal_semantics,personal_valid,impersonal_valid,opt_entry,opt_acc,short_def,cmt
 ἀνίημι,,,dat,1,0,0,1,0,ἀνίημι,yes,urge,
 ἀφίημι,,,dat,1,0,0,1,0,ἀφίημι,yes,allow,not accounted by LSJ or DGE: Xen.Hell. 6.1.13
 δέομαι,,,gen,1,1,0,1,0,δέω2,not_quite,ask,δεῖ?
@@ -21,12 +21,12 @@ lemma,freq,ctxfreq,xobj_case,personal,impersonal,modal_semantics,personal_valid,
 καταδικάζω,,,gen,1,0,0,1,0,καταδικάζω,no,condemn,
 κηρύσσω,,,dat,1,0,0,1,0,κηρύσσω,no,command,
 παραγγέλλω,,,dat,1,0,0,1,0,παραγγέλλω,no,command,"acc for things only: π. παρασκευὴν σίτου order corn to be supplied, Hdt. 3.25"
-παραιτέω,,,gen,1,0,0,1,0,παραιτέομαι,yes,ask,active almost missing
+παραιτέομαι,,,gen,1,0,0,1,0,παραιτέω,yes,ask,active almost missing
 παραμυθέομαι,,,dat,1,0,0,1,0,παραμυθέομαι,yes,encourage,acc rarer
 παρίημι,,,dat,1,0,0,1,0,παρίημι,no,allow,
 πιστεύω,,,dat,1,0,0,1,0,πιστεύω,no,believe,
 πόρω,,,dat,0,1,1,0,1,πόρω,no,allow,"rare verb, probably unattested in the corpus"
-πρέπει,,,dat,1,1,1,0,1,πρέπει,yes,be_appropriate,πρέπει τὸν Αἰνησιδάμου ἐγκωμίων τε μελέων λυρᾶν τε τυγχανέμεν Pi. O. 2.46
+πρέπω,,,dat,1,1,1,0,1,πρέπει,yes,be_appropriate,πρέπει τὸν Αἰνησιδάμου ἐγκωμίων τε μελέων λυρᾶν τε τυγχανέμεν Pi. O. 2.46
 προβάλλω,,,dat,1,0,0,1,0,προβάλλω,no,challenge,rare in this acception
 προξενέω,,,dat,1,0,0,1,0,προξενέω,no,allow,more like grant
 προσδέομαι,,,gen,1,1,1,1,0,προσδέω2,not_quite,ask,see δέομαι
