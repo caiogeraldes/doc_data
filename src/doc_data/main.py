@@ -23,10 +23,12 @@ if __name__ == "__main__":  # pragma: no cover
     from doc_data.processor import gen_data
     from doc_data.db import mongo, write_pickle_to_mongo
 
-    logging.basicConfig(filename="data.processing.log",
-                        format='%(asctime)s - %(message)s',
-                        filemode="w",
-                        level=logging.INFO)
+    logging.basicConfig(
+        filename="data.processing.log",
+        format="%(asctime)s - %(message)s",
+        filemode="w",
+        level=logging.INFO,
+    )
 
     start = time.time()
 
@@ -69,7 +71,9 @@ if __name__ == "__main__":  # pragma: no cover
         pbar.refresh()
 
     end = time.time()
-    logging.info("Criação de arquivos serializados %s segundos", end-start_serializacao)
+    logging.info(
+        "Criação de arquivos serializados %s segundos", end - start_serializacao
+    )
 
     start_mongo = time.time()
 
@@ -79,7 +83,9 @@ if __name__ == "__main__":  # pragma: no cover
     write_pickle_to_mongo(PROC_DATA_PATH, col)
 
     end = time.time()
-    logging.info("Criação do MongoDB demorou %s segundos", end-start_mongo)
+    logging.info("Criação do MongoDB demorou %s segundos", end - start_mongo)
 
     end = time.time()
-    logging.info("Criação do completa do banco de dados demorou %s segundos", end-start)
+    logging.info(
+        "Criação do completa do banco de dados demorou %s segundos", end - start
+    )

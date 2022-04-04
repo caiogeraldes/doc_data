@@ -9,7 +9,7 @@ def main_query(collection: Collection, feature: str, value: str) -> list:
     Takes a collection of tokens built by doc_data.db.write_mongo,
     queries for the proper value for the feature.
     """
-    doc = collection. aggregate([{'$match': { feature: value }}])
+    doc = collection.aggregate([{"$match": {feature: value}}])
     return list(doc)
 
 
@@ -21,7 +21,6 @@ if __name__ == "__main__":
 
     mvi: pd.DataFrame = pd.read_csv("~/proj/doc_data/data/mvi.csv")
     mvi.set_index("lemma", inplace=True)
-
 
     db = mongo(MONGO)
     tokenCollection = db.tokens
