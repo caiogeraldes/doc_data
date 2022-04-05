@@ -75,13 +75,11 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
         6. `tsi`: identificação do token a partir do nome do autor, texto, índice da sentença e do token em um id hasheado com `hashlib.md5`;
         7. `tsh`: identificação do token a partir do nome do autor, texto, índice da sentença e do head em um id hasheado com `hashlib.md5`;
         8. `_id`: identificação única do token a partir de `tsi` e `tsh`, hasheado com `hashlib.md5`
-    - [ ] mvi (collection): coleção de verbos principais de interesse com características centrais (lemma, valência, regência, semântica)
 
 ### Coleta de amostras
 
-- [ ] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/searchpipeline.py`. Sendo assim, elas são específicas para este trabalho.
-    - [ ] Separação por textos.
-    - [ ] Seleção de sentenças contendo os verbos de `mvi`.
+- [ ] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/query.py`. Sendo assim, elas são específicas para este trabalho.
+    - [x] Seleção de sentenças contendo os verbos de `data/mvi.csv`. Resultado salvo em duas collections: `mviquery` e `mviquery:hits`
     - [ ] Filtragem de sentenças contendo infinitivo subordinado ao verbo principal;
     - [ ] Filtragem de sentenças contendo dativo ou genitivo subordinado ao verbo principal (caso a partir de `mvi`).
     - [ ] Filtragem de sentenças contendo predicado secundário subordinado ou ao VP ou ao Inf.
