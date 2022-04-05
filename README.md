@@ -47,7 +47,7 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
     - [x] tokens (collection): coleção de tokens de todos os autores e textos selecionados (`write_pickle_to_mongo` de `./src/doc_data/db.py`). Exemplo de documento:
         ```json
         {
-            "_id": "8c2976b6df70db489068dd3d67eb0b79",
+            "_id": "ecc5b9e54146a5af697d578436a32ff6",
             "id": 1,
             "text": "οὐ",
             "lemma": "οὐ",
@@ -61,8 +61,9 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
             "author": "Lysias (0540)",
             "text_id": "44a283f7e6436806f453929b39fcb8b6",
             "sent_id": 1,
-            "sid_id": [1, 1],
-            "sid_hid": [1, 3]
+            "ts": "1941f2bec3a79dd3c18b4674d5a3bf8d",
+            "tsi": "25850a5d4f9cd86d33a353ee598789b2",
+            "tsh": "ed14403c056f3082c38834c86fef7ea9"
         }
         ```
         As entradas adicionais em relação ao resultado da pipeline de NLP são:
