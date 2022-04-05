@@ -19,13 +19,15 @@ if __name__ == "__main__":
     from doc_data.main import MONGO
     from doc_data.db import mongo
 
-    mvi: pd.DataFrame = pd.read_csv("~/proj/doc_data/data/mvi.csv")
-    mvi.set_index("lemma", inplace=True)
+    mvi: pd.DataFrame = pd.read_csv("../../data/mvi.csv")
 
     db = mongo(MONGO)
     tokenCollection = db.tokens
-    for i in mvi.index:
-        a = main_query(tokenCollection, "lemma", i)
-        mvi.loc[[i]]["n"] = len(a)
 
-    print(mvi.n)
+    freq = []
+    for i in mvi.lemma:
+        a = main_query(tokenCollection, "lemma", i)
+        freq.append(len(a))
+
+    mvi.freq = freq
+    print(mvi)
