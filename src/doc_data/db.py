@@ -48,26 +48,26 @@ def write_pickle_to_mongo(proc_path, mongo_collection):
             leave=True,
         )
         for i, j in zip(pbar, doc_d):
-            for t_id, token in enumerate(j):
+            for t_id, tkn in enumerate(j):
                 # Generates data not accounted for by stanza, including hashed ids
-                token["doc_name"] = title
-                token["author"] = author
-                token["text_id"] = md5(
-                    f"{token['author']}-{token['doc_name']}".encode()
+                tkn["doc_name"] = title
+                tkn["author"] = author
+                tkn["text_id"] = md5(
+                    f"{tkn['author']}-{tkn['doc_name']}".encode()
                 ).hexdigest()
-                token["sent_id"] = i + 1
-                token["atsi"] = md5(
-                    f"{token['author']}{token['doc_name']}{token['sent_id']}{token['id']}".encode()
+                tkn["sent_id"] = i + 1
+                tkn["atsi"] = md5(
+                    f"{tkn['author']}{tkn['doc_name']}{tkn['sent_id']}{tkn['id']}".encode()
                 ).hexdigest()
-                token["atsh"] = md5(
-                    f"{token['author']}{token['doc_name']}{token['sent_id']}{token['head']}".encode()  # pylint: disable=line-too-long
+                tkn["atsh"] = md5(
+                    f"{tkn['author']}{tkn['doc_name']}{tkn['sent_id']}{tkn['head']}".encode()
                 ).hexdigest()
-                token["_id"] = md5(
-                    f"{token['atsi']}{token['atsh']}".encode()
+                tkn["_id"] = md5(
+                    f"{tkn['atsi']}{tkn['atsh']}".encode()
                 ).hexdigest()
                 # Avoids trying to insert the same token twice.
                 try:
-                    mongo_collection.insert_one(token)
+                    mongo_collection.insert_one(tkn)
                 except DuplicateKeyError as _:
                     del _
                 finally:

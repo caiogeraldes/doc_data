@@ -64,7 +64,7 @@ def dependent_query(
     value: Union[str, list[str]],
     relation: str = "$eq",
     name: Optional[str] = None,
-):   # pylint: disable=too-many-arguments
+):  # pylint: disable=too-many-arguments
     """
     TODO
     """
