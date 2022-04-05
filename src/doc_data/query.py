@@ -72,21 +72,6 @@ def independent_query(
     return collection.database[name], collection.database[name + ":hits"]
 
 
-def dependent_query(
-    collection, feature, value, name, relation, head_collection
-):  # pylint: disable=too-many-arguments
-    """
-    TODO
-    """
-    interest_heads = head_collection.distinct("tsi")
-
-    a_list = collection.aggregate(
-        [{"$match": {"tsh": {"$in": interest_heads}, feature: {relation: value}}}]
-    )
-    print(name)
-    print(len(list(a_list)))
-
-
 if __name__ == "__main__":
     import pandas as pd
     from doc_data.main import MONGO
@@ -102,12 +87,4 @@ if __name__ == "__main__":
         relation="$in",
         value=lemmata,
         name="mviquery",
-    )
-    dependent_query(
-        token_collection,
-        feature="feats",
-        relation="$regex",
-        value="VerbForm=Inf",
-        name="infquery",
-        head_collection=hits_collection,
     )
