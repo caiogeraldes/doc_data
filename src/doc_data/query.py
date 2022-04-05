@@ -72,19 +72,19 @@ def independent_query(
     return collection.database[name], collection.database[name + ":hits"]
 
 
-def dependent_query(collection, feature, value, name, relation, head_collection):
+def dependent_query(
+    collection, feature, value, name, relation, head_collection
+):  # pylint: disable=too-many-arguments
     """
     TODO
     """
     interest_heads = head_collection.distinct("tsi")
 
-    a = collection.aggregate([
-        {"$match": {
-            "tsh": {"$in": interest_heads},
-            feature: {relation: value}
-        }}
-    ])
-    print(len(list(a)))
+    a_list = collection.aggregate(
+        [{"$match": {"tsh": {"$in": interest_heads}, feature: {relation: value}}}]
+    )
+    print(name)
+    print(len(list(a_list)))
 
 
 if __name__ == "__main__":
@@ -109,4 +109,5 @@ if __name__ == "__main__":
         relation="$regex",
         value="VerbForm=Inf",
         name="infquery",
-        head_collection=hits_collection)
+        head_collection=hits_collection,
+    )
