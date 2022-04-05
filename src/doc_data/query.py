@@ -3,7 +3,7 @@ Handles the querying for building the sentences database
 """
 import logging
 from typing import Optional, Union, Tuple
-from pymongo.collection import Collection
+from pymongo.collection import Collection  # type: ignore
 
 logging.basicConfig(level=logging.WARN)
 
@@ -64,7 +64,10 @@ def dependent_query(
     value: Union[str, list[str]],
     relation: str = "$eq",
     name: Optional[str] = None,
-):
+):   # pylint: disable=too-many-arguments
+    """
+    TODO
+    """
     print(head_collection)
 
     relation, name = validate(feature, value, relation, name)
