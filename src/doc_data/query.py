@@ -48,12 +48,19 @@ def independent_query(
 
     relation, name = validate(feature, value, relation, name)
 
-    collection.aggregate(
-        [{"$match": {feature: {relation: value}}}, {"$out": f"{name}"}]
-    )
+    hits = list(collection.aggregate([
+        {"$match": {feature: {relation: value}}},
+        {"$project": {"ts": 1}}
+    ]))
 
-    nhits = len(list(collection.aggregate([{"$match": {feature: {relation: value}}}])))
-    print(f"Hits for {feature} = {value}: {nhits}")
+    ts = list(set([x['ts'] for x in hits]))
+
+    collection.aggregate([
+        {'$match': {"ts": {"$in": ts}}},
+        {'$out': name}
+    ])
+
+    print(f"Hits for {feature} = {value}: {len(hits)}")
     return collection.database[name]
 
 
@@ -90,7 +97,7 @@ if __name__ == "__main__":
     lemmata = list(mvi.lemma)
     db = mongo(MONGO)
     token_collection = db.tokens
-    main_collection = independent_query(
+    independent_query(
         token_collection,
         feature="lemma",
         relation="$in",

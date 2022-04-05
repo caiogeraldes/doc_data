@@ -70,9 +70,10 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
         2. `author`: armazena o nome do autor com sua numeração;
         3. `text_id`: identificação única gerada a partir do autor e nome do texto, hasheado com `hashlib.md5`
         4. `sent_id`: armazena o índice da sentença em um dado documento;
-        5. `sid_id`: armazena o índice da sentença e do token em uma tupla;
-        6. `sid_hid`: armazena o índice da sentença e do token analisado como `head`.
-        7. `_id`: identificação única gerada a partir do autor, nome do texto e `sid_id`, hasheado com `hashlib.md5`
+        5. `ts`: identificação única da sentença a partir do autor, texto e `sent_id`, hasheada com `hashlib.md5`
+        6. `tsi`: identificação do token a partir do nome do autor, texto, índice da sentença e do token em um id hasheado com `hashlib.md5`;
+        7. `tsh`: identificação do token a partir do nome do autor, texto, índice da sentença e do head em um id hasheado com `hashlib.md5`;
+        8. `_id`: identificação única do token a partir de `tsi` e `tsh`, hasheado com `hashlib.md5`
     - [ ] mvi (collection): coleção de verbos principais de interesse com características centrais (lemma, valência, regência, semântica)
 
 ### Coleta de amostras
