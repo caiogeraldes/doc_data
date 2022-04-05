@@ -40,7 +40,7 @@ def independent_query(
     value: Union[str, list[str]],
     relation: str = "$eq",
     name: Optional[str] = None,
-) -> Collection:
+) -> Tuple[Collection, Collection]:
     """
     Takes a collection of tokens built by doc_data.db.write_mongo,
     queries for the proper value for the feature.
@@ -48,44 +48,43 @@ def independent_query(
 
     relation, name = validate(feature, value, relation, name)
 
-    hits = list(collection.aggregate([
-        {"$match": {feature: {relation: value}}},
-        {"$project": {"ts": 1}}
-    ]))
+    hits = list(
+        collection.aggregate(
+            [
+                {"$match": {feature: {relation: value}}},
+                {"$project": {"ts": 1, "tsi": 1, "tsh": 1}},
+            ]
+        )
+    )
 
-    ts = list(set([x['ts'] for x in hits]))
+    ts_ids = {x["ts"] for x in hits}
 
-    collection.aggregate([
-        {'$match': {"ts": {"$in": ts}}},
-        {'$out': name}
-    ])
+    collection.aggregate([{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": name}])
+    collection.aggregate(
+        [
+            {"$match": {feature: {relation: value}}},
+            {"$project": {"ts": 1, "tsi": 1, "tsh": 1}},
+            {"$out": name + ":hits"},
+        ]
+    )
 
     print(f"Hits for {feature} = {value}: {len(hits)}")
-    return collection.database[name]
+    return collection.database[name], collection.database[name + ":hits"]
 
 
-def dependent_query(
-    collection: Collection,
-    head_collection: Collection,
-    feature: str,
-    value: Union[str, list[str]],
-    relation: str = "$eq",
-    name: Optional[str] = None,
-):  # pylint: disable=too-many-arguments
+def dependent_query(collection, feature, value, name, relation, head_collection):
     """
     TODO
     """
-    print(head_collection)
+    interest_heads = head_collection.distinct("tsi")
 
-    relation, name = validate(feature, value, relation, name)
-
-    collection.aggregate(
-        [{"$match": {feature: {relation: value}}}, {"$out": f"{name}"}]
-    )
-
-    nhits = len(list(collection.aggregate([{"$match": {feature: {relation: value}}}])))
-    print(f"Hits for {feature} = {value}: {nhits}")
-    return collection.database[name]
+    a = collection.aggregate([
+        {"$match": {
+            "tsh": {"$in": interest_heads},
+            feature: {relation: value}
+        }}
+    ])
+    print(len(list(a)))
 
 
 if __name__ == "__main__":
@@ -97,10 +96,17 @@ if __name__ == "__main__":
     lemmata = list(mvi.lemma)
     db = mongo(MONGO)
     token_collection = db.tokens
-    independent_query(
+    sent_collection, hits_collection = independent_query(
         token_collection,
         feature="lemma",
         relation="$in",
         value=lemmata,
         name="mviquery",
     )
+    dependent_query(
+        token_collection,
+        feature="feats",
+        relation="$regex",
+        value="VerbForm=Inf",
+        name="infquery",
+        head_collection=hits_collection)
