@@ -59,17 +59,44 @@ def independent_query(
 
     ts_ids = {x["ts"] for x in hits}
 
-    collection.aggregate([{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": name}])
+    collection.aggregate(
+        [{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": "interest_tokens"}]
+    )
     collection.aggregate(
         [
             {"$match": {feature: {relation: value}}},
             {"$project": {"ts": 1, "tsi": 1, "tsh": 1}},
-            {"$out": name + ":hits"},
+            {"$out": name},
         ]
     )
 
     print(f"Hits for {feature} = {value}: {len(hits)}")
-    return collection.database[name], collection.database[name + ":hits"]
+    return collection.database["interest_tokens"], collection.database[name]
+
+
+def dependent_query(
+    collection, feature, value, name, relation, head_collection
+):  # pylint: disable=too-many-arguments
+    """
+    TODO
+    """
+    head_ids = head_collection.distinct("tsi")
+    hits = list(
+        collection.aggregate(
+            [{"$match": {"tsh": {"$in": head_ids}, feature: {relation: value}}}]
+        )
+    )
+    ts_ids = {x["ts"] for x in hits}
+    collection.aggregate(
+        [{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": "interest_tokens"}]
+    )
+    collection.aggregate(
+        [
+            {"$match": {"tsh": {"$in": head_ids}, feature: {relation: value}}},
+            {"$out": name},
+        ]
+    )
+    return collection.database["interest_tokens"], collection.database[name]
 
 
 if __name__ == "__main__":
@@ -79,12 +106,28 @@ if __name__ == "__main__":
 
     mvi: pd.DataFrame = pd.read_csv("data/mvi.csv")
     lemmata = list(mvi.lemma)
-    db = mongo(MONGO)
+    db = mongo(MONGO, "phd")
     token_collection = db.tokens
-    sent_collection, hits_collection = independent_query(
+    sent_collection, mvi_collection = independent_query(
         token_collection,
         feature="lemma",
         relation="$in",
         value=lemmata,
         name="mviquery",
+    )
+    sent_collection, mvi_collection = dependent_query(
+        sent_collection,
+        feature="feats",
+        relation="$regex",
+        value="VerbForm=Inf",
+        name="infquery",
+        head_collection=mvi_collection,
+    )
+    sent_collection, mvi_collection = dependent_query(
+        sent_collection,
+        feature="feats",
+        relation="$regex",
+        value="Case=Dat|Case=Gen",
+        name="xobjquery",
+        head_collection=mvi_collection,
     )

@@ -80,8 +80,8 @@ Para garantir que os dados sejam recuperáveis da maneira mais eficiente o poss�
 
 - [ ] As amostras são coletadas por meio de uma Pipeline de queries e agregações definidas em `./src/doc_data/query.py`. Sendo assim, elas são específicas para este trabalho.
     - [x] Seleção de sentenças contendo os verbos de `data/mvi.csv`. Resultado salvo em duas collections: `mviquery` e `mviquery:hits`
-    - [ ] Filtragem de sentenças contendo infinitivo subordinado ao verbo principal;
-    - [ ] Filtragem de sentenças contendo dativo ou genitivo subordinado ao verbo principal (caso a partir de `mvi`).
+    - [x] Filtragem de sentenças contendo infinitivo subordinado ao verbo principal;
+    - [x] Filtragem de sentenças contendo dativo ou genitivo subordinado ao verbo principal (caso a partir de `mvi`).
     - [ ] Filtragem de sentenças contendo predicado secundário subordinado ou ao VP ou ao Inf.
     - [ ] Revisão manual dos dados.
     - [ ] Reformulação da pipeline se necessário.
