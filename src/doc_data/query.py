@@ -132,37 +132,3 @@ def dependent_query(
         ]
     )
     return collection.database["interest_tokens"], collection.database[name]
-
-
-if __name__ == "__main__":
-    import pandas as pd
-    from doc_data.main import MONGO, MVI
-    from doc_data.db import mongo
-
-    mvi: pd.DataFrame = pd.read_csv(MVI)
-    lemmata = list(mvi.lemma)
-    db = mongo(MONGO, "phd")
-    token_collection = db.tokens
-    sent_collection, mvi_collection = independent_query(
-        token_collection,
-        feature="lemma",
-        relation="$in",
-        value=lemmata,
-        name="mviquery",
-    )
-    sent_collection, mvi_collection = dependent_query(
-        sent_collection,
-        feature="feats",
-        relation="$regex",
-        value="VerbForm=Inf",
-        name="infquery",
-        head_collection=mvi_collection,
-    )
-    sent_collection, mvi_collection = dependent_query(
-        sent_collection,
-        feature="feats",
-        relation="$regex",
-        value="Case=Dat|Case=Gen",
-        name="xobjquery",
-        head_collection=mvi_collection,
-    )
