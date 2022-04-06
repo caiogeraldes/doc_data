@@ -28,12 +28,12 @@ def test_data_tools(stanza_dir, datafiles):
         depparse_batch_size=400,
         dir=stanza_dir,
     )
-    diofile = str(os.path.join(datafiles, TEST_DOC))
-    outfile = str(diofile).replace("json", "pickle")
+    diofile: str = str(os.path.join(datafiles, TEST_DOC))
+    outfile: str = str(diofile).replace("json", "pickle")
     gen_data(nlp, diofile, outfile)
     assert TEST_DOC.replace("json", "pickle") in os.listdir(FIXTURE_DIR)
 
-    doc = read_data(outfile)
+    doc: Document = read_data(outfile)
     assert isinstance(doc, Document)
     assert isinstance(doc.sentences[0], Sentence)
     assert isinstance(doc.sentences[0].words[0], Word)

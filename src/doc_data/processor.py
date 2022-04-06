@@ -1,5 +1,5 @@
 """
-Module for processing and generating the serialized stanza datase
+Module for processing and generating the serialized stanza dataset
 from .json files of the Diorisis Corpus.
 """
 import json
@@ -15,7 +15,7 @@ def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
         diorisis_file: [str] .json file from the Diorisis corpus
             (at:[https://figshare.com/articles/dataset/The_Diorisis_Ancient_Greek_Corpus_JSON_/])
         out_name: [str] Name for the output serialized file to be created
-            (recommended to use a .pickle format)
+            (recommended using a .pickle format)
     """
     with open(diorisis_file, "r", encoding="utf-8") as file:
         doc = json.load(file)

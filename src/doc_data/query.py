@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.WARN)
 
 
 def validate(
-    feature: str, value: Union[str, list[str]], relation: str, name: Optional[str]
+        feature: str, value: Union[str, list[str]], relation: str, name: Optional[str]
 ) -> Tuple[str, str]:
     """
     Validates the set of feature, value, relation and name passed
@@ -17,8 +17,8 @@ def validate(
     and name if necessary.
     """
     if isinstance(value, list):
-        logging.warning("Value passed as list, using relation = '$in'")
         if relation != "$in":
+            logging.warning("Value passed as list, using relation = '$in'")
             relation = "$in"
         if not name:
             logging.warning(
@@ -35,11 +35,11 @@ def validate(
 
 
 def independent_query(
-    collection: Collection,
-    feature: str,
-    value: Union[str, list[str]],
-    relation: str = "$eq",
-    name: Optional[str] = None,
+        collection: Collection,
+        feature: str,
+        value: Union[str, list[str]],
+        relation: str = "$eq",
+        name: Optional[str] = None,
 ) -> Tuple[Collection, Collection]:
     """
     Takes a collection of tokens built by doc_data.db.write_mongo,
@@ -90,12 +90,12 @@ def independent_query(
 
 
 def dependent_query(
-    collection: Collection,
-    feature: str,
-    value: str,
-    name: str,
-    relation: str,
-    head_collection: Collection,
+        collection: Collection,
+        feature: str,
+        value: str,
+        name: str,
+        relation: str,
+        head_collection: Collection,
 ):  # pylint: disable=too-many-arguments
     """
     TODO
@@ -136,10 +136,10 @@ def dependent_query(
 
 if __name__ == "__main__":
     import pandas as pd
-    from doc_data.main import MONGO
+    from doc_data.main import MONGO, MVI
     from doc_data.db import mongo
 
-    mvi: pd.DataFrame = pd.read_csv("data/mvi.csv")
+    mvi: pd.DataFrame = pd.read_csv(MVI)
     lemmata = list(mvi.lemma)
     db = mongo(MONGO, "phd")
     token_collection = db.tokens

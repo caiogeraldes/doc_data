@@ -10,18 +10,24 @@ DIORISIS_PATH = os.getenv("DIORISIS_PATH")
 PROC_DATA_PATH = os.getenv("PROC_DATA_PATH")
 MONGO = os.getenv("MONGO")
 STANZA_RESOURCES_DIR = os.getenv("STANZA_RESOURCES_DIR")
-assert DIORISIS_PATH is not None, "Path para DIORISIS não especificada"
-assert PROC_DATA_PATH is not None
-assert MONGO is not None
-assert STANZA_RESOURCES_DIR is not None
+MVI = os.getenv("MVI")
+assert DIORISIS_PATH is not None, "Path to DIORISIS unspecified"
+assert PROC_DATA_PATH is not None, "Path to serialized stanza.Documents unspecified"
+assert MONGO is not None, "MongoDB connection unspecified"
+assert STANZA_RESOURCES_DIR is not None, "Path to stanza_resources unspecified"
+assert MVI is not None, "Path to mvi.csv unspecified"
 
 if __name__ == "__main__":  # pragma: no cover
     import time
     import logging
+    import pandas as pd
+    from pymongo.database import Database  # type: ignore
+    from pymongo.collection import Collection  # type: ignore
     from tqdm import trange  # type: ignore
     import stanza  # type: ignore
     from doc_data.processor import gen_data
     from doc_data.db import mongo, write_pickle_to_mongo
+    from doc_data.query import independent_query, dependent_query
 
     logging.basicConfig(
         filename="data.processing.log",
@@ -52,7 +58,7 @@ if __name__ == "__main__":  # pragma: no cover
         dir=STANZA_RESOURCES_DIR,
     )
 
-    start_serializacao = time.time()
+    start_serialization = time.time()
 
     diorisis_files = [x for x in os.listdir(DIORISIS_PATH) if x != "corpus.json"]
     n_files = len(diorisis_files)
@@ -67,25 +73,59 @@ if __name__ == "__main__":  # pragma: no cover
         else:
             STATUS = "Existing"
             logging.warning("File %s already existed in %s", str(opath), PROC_DATA_PATH)
-        pbar.set_description(f"Processed file {json_file} ({i+1}/{n_files} - {STATUS})")
+        pbar.set_description(f"Processed file {json_file} ({i + 1}/{n_files} - {STATUS})")
         pbar.refresh()
 
     end = time.time()
     logging.info(
-        "Criação de arquivos serializados %s segundos", end - start_serializacao
+        "stanza.Document serialization took %s seconds", end - start_serialization
     )
 
     start_mongo = time.time()
 
-    logging.info("Preparando dados de: %s", PROC_DATA_PATH)
-    db = mongo(MONGO)
-    col = db.tokens
-    write_pickle_to_mongo(PROC_DATA_PATH, col)
+    logging.info("Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH)
+    db: Database = mongo(MONGO)
+    col: Collection = db.tokens
+    if col.estimated_document_count() <= 100000:
+        write_pickle_to_mongo(PROC_DATA_PATH, col)
+    else:
+        logging.info("Data already collected in MongoDB")
 
     end = time.time()
-    logging.info("Criação do MongoDB demorou %s segundos", end - start_mongo)
+    logging.info("Creation of tokens collection took %s seconds", end - start_mongo)
+
+    start_query = time.time()
+
+    mvi_df: pd.DataFrame = pd.read_csv(MVI)
+    lemmata = list(mvi_df.lemma)
+    sent_collection, mvi_collection = independent_query(
+        col,
+        feature="lemma",
+        relation="$in",
+        value=lemmata,
+        name="mviquery",
+    )
+    sent_collection, mvi_collection = dependent_query(
+        sent_collection,
+        feature="feats",
+        relation="$regex",
+        value="VerbForm=Inf",
+        name="infquery",
+        head_collection=mvi_collection,
+    )
+    sent_collection, mvi_collection = dependent_query(
+        sent_collection,
+        feature="feats",
+        relation="$regex",
+        value="Case=Dat|Case=Gen",
+        name="xobjquery",
+        head_collection=mvi_collection,
+    )
+
+    end = time.time()
+    logging.info("Queries on MongoDB took %s seconds", end - start_query)
 
     end = time.time()
     logging.info(
-        "Criação do completa do banco de dados demorou %s segundos", end - start
+        "Full database generation took %s seconds", end - start
     )
