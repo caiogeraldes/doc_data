@@ -30,7 +30,7 @@ if __name__ == "__main__":  # pragma: no cover
     from doc_data.query import independent_query, dependent_query
 
     logging.basicConfig(
-        filename="data.processing.log",
+        filename="data-processing.log",
         format="%(asctime)s - %(message)s",
         filemode="w",
         level=logging.INFO,
