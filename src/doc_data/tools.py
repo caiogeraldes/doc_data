@@ -2,7 +2,7 @@
 Helper functions
 """
 from typing import Union
-from pymongo.collection import Collection
+from pymongo.collection import Collection  # type: ignore
 
 
 def gen_sent(
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     from doc_data.db import mongo
     from doc_data.main import MONGO
 
-    db = mongo(MONGO, "pytest")
-    sent_collection = db.test
+    db = mongo(MONGO)
+    sent_collection = db.interest_tokens
 
-    print(gen_sent(sent_collection, "43136bd5b0bba2b1a7d9b7301f166bca"))
+    print(gen_sent(sent_collection, "229ed0100155655deed043002aa3dbdd"))

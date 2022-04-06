@@ -59,17 +59,19 @@ def independent_query(
 
     ts_ids = {x["ts"] for x in hits}
 
-    collection.aggregate([{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": name}])
+    collection.aggregate(
+        [{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": "interest_tokens"}]
+    )
     collection.aggregate(
         [
             {"$match": {feature: {relation: value}}},
             {"$project": {"ts": 1, "tsi": 1, "tsh": 1}},
-            {"$out": name + ":hits"},
+            {"$out": name},
         ]
     )
 
     print(f"Hits for {feature} = {value}: {len(hits)}")
-    return collection.database[name], collection.database[name + ":hits"]
+    return collection.database["interest_tokens"], collection.database[name]
 
 
 def dependent_query(
@@ -78,13 +80,23 @@ def dependent_query(
     """
     TODO
     """
-    interest_heads = head_collection.distinct("tsi")
-
-    a_list = collection.aggregate(
-        [{"$match": {"tsh": {"$in": interest_heads}, feature: {relation: value}}}]
+    head_ids = head_collection.distinct("tsi")
+    hits = list(
+        collection.aggregate(
+            [{"$match": {"tsh": {"$in": head_ids}, feature: {relation: value}}}]
+        )
     )
-    print(name)
-    print(len(list(a_list)))
+    ts_ids = {x["ts"] for x in hits}
+    collection.aggregate(
+        [{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": "interest_tokens"}]
+    )
+    collection.aggregate(
+        [
+            {"$match": {"tsh": {"$in": head_ids}, feature: {relation: value}}},
+            {"$out": name},
+        ]
+    )
+    return collection.database["interest_tokens"], collection.database[name]
 
 
 if __name__ == "__main__":
@@ -94,20 +106,28 @@ if __name__ == "__main__":
 
     mvi: pd.DataFrame = pd.read_csv("data/mvi.csv")
     lemmata = list(mvi.lemma)
-    db = mongo(MONGO)
+    db = mongo(MONGO, "phd")
     token_collection = db.tokens
-    sent_collection, hits_collection = independent_query(
+    sent_collection, mvi_collection = independent_query(
         token_collection,
         feature="lemma",
         relation="$in",
         value=lemmata,
         name="mviquery",
     )
-    dependent_query(
-        token_collection,
+    sent_collection, mvi_collection = dependent_query(
+        sent_collection,
         feature="feats",
         relation="$regex",
         value="VerbForm=Inf",
         name="infquery",
-        head_collection=hits_collection,
+        head_collection=mvi_collection,
+    )
+    sent_collection, mvi_collection = dependent_query(
+        sent_collection,
+        feature="feats",
+        relation="$regex",
+        value="Case=Dat|Case=Gen",
+        name="xobjquery",
+        head_collection=mvi_collection,
     )
