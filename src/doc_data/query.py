@@ -75,7 +75,12 @@ def independent_query(
 
 
 def dependent_query(
-    collection, feature, value, name, relation, head_collection
+    collection: Collection,
+    feature: str,
+    value: str,
+    name: str,
+    relation: str,
+    head_collection: Collection,
 ):  # pylint: disable=too-many-arguments
     """
     TODO
