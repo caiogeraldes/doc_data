@@ -86,10 +86,7 @@ if __name__ == "__main__":  # pragma: no cover
     logging.info("Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH)
     db: Database = mongo(MONGO)
     col: Collection = db.tokens
-    if col.estimated_document_count() <= 100000:
-        write_pickle_to_mongo(PROC_DATA_PATH, col)
-    else:
-        logging.info("Data already collected in MongoDB")
+    write_pickle_to_mongo(PROC_DATA_PATH, col)
 
     end = time.time()
     logging.info("Creation of tokens collection took %s seconds", end - start_mongo)
