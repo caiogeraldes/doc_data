@@ -31,8 +31,14 @@ pytest = "^6.2.5"
 ipython = "^8.1.1"
 pytest-datafiles = "^2.0"
 click = "8.0.1"
+pyproject-flake8 = "^0.0.1-alpha.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+max-line-length = 88
+select = "C,E,F,W,B,B950"
+extend-ignore = "E203, E501"
 

@@ -2,14 +2,14 @@
 Handles the querying for building the sentences database
 """
 import logging
-from typing import Optional, Union, Tuple
-from pymongo.collection import Collection  # type: ignore
+from typing import Optional, Union, Tuple, List, Any
+from pymongo.collection import Collection  # type: ignore # pylint: disable=import-error
 
 logging.basicConfig(level=logging.WARN)
 
 
 def validate(
-    feature: str, value: Union[str, list[str]], relation: str, name: Optional[str]
+    feature: str, value: Union[str, List[str]], relation: str, name: Optional[str]
 ) -> Tuple[str, str]:
     """
     Validates the set of feature, value, relation and name passed
@@ -37,7 +37,7 @@ def validate(
 def independent_query(
     collection: Collection,
     feature: str,
-    value: Union[str, list[str]],
+    value: Union[str, List[str]],
     relation: str = "$eq",
     name: Optional[str] = None,
 ) -> Tuple[Collection, Collection]:
@@ -132,3 +132,23 @@ def dependent_query(
         ]
     )
     return collection.database["interest_tokens"], collection.database[name]
+
+
+def query_builder(
+    query: List[Any], heading: Union[Collection, List[Collection]]
+) -> List[Any]:
+    """
+    TODO
+    """
+    # query_sentences = query.copy()
+    query_hits = query.copy()
+    # query_name = query.copy()
+
+    if isinstance(heading, list):
+        head_ids = []
+        for head in heading:
+            head_ids.extend(head.distinct("text-sentence-id"))
+        head_ids = list(set(head_ids))
+        query_hits[0]["$match"]["text-sentence-head"] = {"$in": head_ids}
+
+    return query_hits
