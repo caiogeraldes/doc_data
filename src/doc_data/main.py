@@ -94,7 +94,12 @@ if __name__ == "__main__":  # pragma: no cover
     )
     db: Database = mongo(MONGO)
     col: Collection = db.tokens
-    write_pickle_to_mongo(PROC_DATA_PATH, col)
+    if col.estimated_document_count() == 0:
+        write_pickle_to_mongo(PROC_DATA_PATH, col)
+    else:
+        logging.warning(
+            "Collection phd.tokens already populated, detach if needed to update."
+        )
 
     end = time.time()
     logging.info("Creation of tokens collection took %s seconds", end - start_mongo)
