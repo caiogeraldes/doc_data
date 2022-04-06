@@ -7,7 +7,7 @@ import stanza  # type: ignore
 from cltk.alphabet.grc import normalize_grc, beta_to_unicode  # type: ignore
 
 
-def gen_data(nlp, diorisis_file, out_name):
+def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
     """
     Generates the stanza document and saves it in the format .pickle.
     args:
@@ -36,7 +36,7 @@ def gen_data(nlp, diorisis_file, out_name):
         out_file.write(serialized_string)
 
 
-def read_data(serialized_path):
+def read_data(serialized_path: str) -> stanza.Document:
     """
     Reads a stanza document serialized to pickle file.
     """
