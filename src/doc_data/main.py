@@ -30,6 +30,9 @@ if __name__ == "__main__":  # pragma: no cover
     from doc_data.db import mongo, write_pickle_to_mongo
     from doc_data.query import independent_query, dependent_query
 
+    # Remove all handlers associated with the root logger object.
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
     logging.basicConfig(
         filename=LOG,
         format="%(asctime)s - %(message)s",
