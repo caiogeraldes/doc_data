@@ -44,7 +44,10 @@ def test_independent_query(datafiles):
         value=["δοκέω"],
         name="mviquery",
     )
-    text_sentence = ["b249b4ddc0d76af602e9747952840b23", "ed4ebc8fa7bb495bbb394180d22e52fa"]
+    text_sentence = [
+        "b249b4ddc0d76af602e9747952840b23",
+        "ed4ebc8fa7bb495bbb394180d22e52fa",
+    ]
     assert out_collection.distinct("text-sentence") == text_sentence
     assert len(out_collection.distinct("_id")) == 95
     assert hit_collection.distinct("text-sentence") == text_sentence

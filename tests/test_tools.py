@@ -16,8 +16,10 @@ def test_independent_query(datafiles):
     test_collection.drop()
     write_pickle_to_mongo(proc_path=PROC_DATA_PATH, mongo_collection=test_collection)
 
-    sent = """εἰ μὲν περὶ ἄλλου τινὸς ἢ τοῦ σώματος , ὦ ἄνδρες δικασταί , Καλλίας ἠγωνίζετο , ἐξήρκει ἄν μοι καὶ τὰ παρὰ τῶν ἄλλων εἰρημένα ·"""
+    sent = "εἰ μὲν περὶ ἄλλου τινὸς ἢ τοῦ σώματος ,"\
+           " ὦ ἄνδρες δικασταί , Καλλίας ἠγωνίζετο ,"\
+           " ἐξήρκει ἄν μοι καὶ τὰ παρὰ τῶν ἄλλων εἰρημένα ·"
     assert gen_sent(test_collection, "43136bd5b0bba2b1a7d9b7301f166bca") == sent
-    assert gen_sent(test_collection, "43136bd5b0bba2b1a7d9b7301f166ba") == None
+    assert gen_sent(test_collection, "43136bd5b0bba2b1a7d9b7301f166ba") is None
 
     test_collection.drop()
