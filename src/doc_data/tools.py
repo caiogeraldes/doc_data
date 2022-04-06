@@ -6,14 +6,14 @@ from pymongo.collection import Collection  # type: ignore
 
 
 def gen_sent(
-    collection: Collection, ts: str  # pylint: disable=invalid-name
+    collection: Collection, text_sentence: str  # pylint: disable=invalid-name
 ) -> Union[str, None]:
     """
-    Generates a readable sentence from a text-sentence id (ts) present
+    Generates a readable sentence from a text-sentence id (text_sentence) present
     in the collection.
     """
     sent_docs = collection.aggregate(
-        [{"$match": {"ts": ts}}, {"$project": {"text": 1}}]
+        [{"$match": {"text-sentence": text_sentence}}, {"$project": {"text": 1}}]
     )
 
     sent_tokens = [x["text"] for x in sent_docs]

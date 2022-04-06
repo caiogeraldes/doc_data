@@ -62,16 +62,18 @@ def write_pickle_to_mongo(proc_path: str, mongo_collection: Collection) -> None:
                     f"{tkn['author']}-{tkn['doc_name']}".encode()
                 ).hexdigest()
                 tkn["sent_id"] = i + 1
-                tkn["ts"] = md5(
+                tkn["text-sentence"] = md5(
                     f"{tkn['author']}{tkn['doc_name']}{tkn['sent_id']}".encode()
                 ).hexdigest()
-                tkn["tsi"] = md5(
+                tkn["text-sentence-id"] = md5(
                     f"{tkn['author']}{tkn['doc_name']}{tkn['sent_id']}{tkn['id']}".encode()
                 ).hexdigest()
-                tkn["tsh"] = md5(
+                tkn["text-sentence-head"] = md5(
                     f"{tkn['author']}{tkn['doc_name']}{tkn['sent_id']}{tkn['head']}".encode()
                 ).hexdigest()
-                tkn["_id"] = md5(f"{tkn['tsi']}{tkn['tsh']}".encode()).hexdigest()
+                tkn["_id"] = md5(
+                    f"{tkn['text-sentence-id']}{tkn['text-sentence-head']}".encode()
+                ).hexdigest()
                 # Avoids trying to insert the same token twice.
                 try:
                     mongo_collection.insert_one(tkn)

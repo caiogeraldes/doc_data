@@ -52,20 +52,35 @@ def independent_query(
         collection.aggregate(
             [
                 {"$match": {feature: {relation: value}}},
-                {"$project": {"ts": 1, "tsi": 1, "tsh": 1}},
+                {
+                    "$project": {
+                        "text-sentence": 1,
+                        "text-sentence-id": 1,
+                        "text-sentence-head": 1,
+                    }
+                },
             ]
         )
     )
 
-    ts_ids = {x["ts"] for x in hits}
+    text_sentence_ids = {x["text-sentence"] for x in hits}
 
     collection.aggregate(
-        [{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": "interest_tokens"}]
+        [
+            {"$match": {"text-sentence": {"$in": list(text_sentence_ids)}}},
+            {"$out": "interest_tokens"},
+        ]
     )
     collection.aggregate(
         [
             {"$match": {feature: {relation: value}}},
-            {"$project": {"ts": 1, "tsi": 1, "tsh": 1}},
+            {
+                "$project": {
+                    "text-sentence": 1,
+                    "text-sentence-id": 1,
+                    "text-sentence-head": 1,
+                }
+            },
             {"$out": name},
         ]
     )
@@ -85,19 +100,34 @@ def dependent_query(
     """
     TODO
     """
-    head_ids = head_collection.distinct("tsi")
+    head_ids = head_collection.distinct("text-sentence-id")
     hits = list(
         collection.aggregate(
-            [{"$match": {"tsh": {"$in": head_ids}, feature: {relation: value}}}]
+            [
+                {
+                    "$match": {
+                        "text-sentence-head": {"$in": head_ids},
+                        feature: {relation: value},
+                    }
+                }
+            ]
         )
     )
-    ts_ids = {x["ts"] for x in hits}
+    text_sentence_ids = {x["text-sentence"] for x in hits}
     collection.aggregate(
-        [{"$match": {"ts": {"$in": list(ts_ids)}}}, {"$out": "interest_tokens"}]
+        [
+            {"$match": {"text-sentence": {"$in": list(text_sentence_ids)}}},
+            {"$out": "interest_tokens"},
+        ]
     )
     collection.aggregate(
         [
-            {"$match": {"tsh": {"$in": head_ids}, feature: {relation: value}}},
+            {
+                "$match": {
+                    "text-sentence-head": {"$in": head_ids},
+                    feature: {relation: value},
+                }
+            },
             {"$out": name},
         ]
     )

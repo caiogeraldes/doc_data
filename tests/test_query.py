@@ -44,11 +44,11 @@ def test_independent_query(datafiles):
         value=["δοκέω"],
         name="mviquery",
     )
-    ts = ["b249b4ddc0d76af602e9747952840b23", "ed4ebc8fa7bb495bbb394180d22e52fa"]
-    assert out_collection.distinct("ts") == ts
+    text_sentence = ["b249b4ddc0d76af602e9747952840b23", "ed4ebc8fa7bb495bbb394180d22e52fa"]
+    assert out_collection.distinct("text-sentence") == text_sentence
     assert len(out_collection.distinct("_id")) == 95
-    assert hit_collection.distinct("ts") == ts
-    assert len(hit_collection.distinct("_id")) == len(ts)
+    assert hit_collection.distinct("text-sentence") == text_sentence
+    assert len(hit_collection.distinct("_id")) == len(text_sentence)
 
     out_collection.drop()
     hit_collection.drop()
