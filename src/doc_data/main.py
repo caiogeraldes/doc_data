@@ -77,7 +77,9 @@ if __name__ == "__main__":  # pragma: no cover
         else:
             STATUS = "Existing"
             logging.warning("File %s already existed in %s", str(opath), PROC_DATA_PATH)
-        pbar.set_description(f"Processed file {json_file} ({i + 1}/{n_files} - {STATUS})")
+        pbar.set_description(
+            f"Processed file {json_file} ({i + 1}/{n_files} - {STATUS})"
+        )
         pbar.refresh()
 
     end = time.time()
@@ -87,7 +89,9 @@ if __name__ == "__main__":  # pragma: no cover
 
     start_mongo = time.time()
 
-    logging.info("Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH)
+    logging.info(
+        "Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH
+    )
     db: Database = mongo(MONGO)
     col: Collection = db.tokens
     write_pickle_to_mongo(PROC_DATA_PATH, col)
@@ -98,6 +102,7 @@ if __name__ == "__main__":  # pragma: no cover
     start_query = time.time()
 
     mvi_df: pd.DataFrame = pd.read_csv(MVI)
+
     lemmata = list(mvi_df.lemma)
     sent_collection, mvi_collection = independent_query(
         col,
@@ -127,6 +132,4 @@ if __name__ == "__main__":  # pragma: no cover
     logging.info("Queries on MongoDB took %s seconds", end - start_query)
 
     end = time.time()
-    logging.info(
-        "Full database generation took %s seconds", end - start
-    )
+    logging.info("Full database generation took %s seconds", end - start)

@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.WARN)
 
 
 def validate(
-        feature: str, value: Union[str, list[str]], relation: str, name: Optional[str]
+    feature: str, value: Union[str, list[str]], relation: str, name: Optional[str]
 ) -> Tuple[str, str]:
     """
     Validates the set of feature, value, relation and name passed
@@ -35,11 +35,11 @@ def validate(
 
 
 def independent_query(
-        collection: Collection,
-        feature: str,
-        value: Union[str, list[str]],
-        relation: str = "$eq",
-        name: Optional[str] = None,
+    collection: Collection,
+    feature: str,
+    value: Union[str, list[str]],
+    relation: str = "$eq",
+    name: Optional[str] = None,
 ) -> Tuple[Collection, Collection]:
     """
     Takes a collection of tokens built by doc_data.db.write_mongo,
@@ -90,12 +90,12 @@ def independent_query(
 
 
 def dependent_query(
-        collection: Collection,
-        feature: str,
-        value: str,
-        name: str,
-        relation: str,
-        head_collection: Collection,
+    collection: Collection,
+    feature: str,
+    value: str,
+    name: str,
+    relation: str,
+    head_collection: Collection,
 ):  # pylint: disable=too-many-arguments
     """
     TODO
