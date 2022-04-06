@@ -11,6 +11,7 @@ PROC_DATA_PATH = os.getenv("PROC_DATA_PATH")
 MONGO = os.getenv("MONGO")
 STANZA_RESOURCES_DIR = os.getenv("STANZA_RESOURCES_DIR")
 MVI = os.getenv("MVI")
+LOG = os.getenv("LOG")
 assert DIORISIS_PATH is not None, "Path to DIORISIS unspecified"
 assert PROC_DATA_PATH is not None, "Path to serialized stanza.Documents unspecified"
 assert MONGO is not None, "MongoDB connection unspecified"
@@ -30,7 +31,7 @@ if __name__ == "__main__":  # pragma: no cover
     from doc_data.query import independent_query, dependent_query
 
     logging.basicConfig(
-        filename="data.processing.log",
+        filename=LOG,
         format="%(asctime)s - %(message)s",
         filemode="w",
         level=logging.INFO,
@@ -86,10 +87,7 @@ if __name__ == "__main__":  # pragma: no cover
     logging.info("Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH)
     db: Database = mongo(MONGO)
     col: Collection = db.tokens
-    if col.estimated_document_count() <= 100000:
-        write_pickle_to_mongo(PROC_DATA_PATH, col)
-    else:
-        logging.info("Data already collected in MongoDB")
+    write_pickle_to_mongo(PROC_DATA_PATH, col)
 
     end = time.time()
     logging.info("Creation of tokens collection took %s seconds", end - start_mongo)
