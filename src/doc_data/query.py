@@ -3,7 +3,7 @@ Handles the querying for building the sentences database
 """
 import logging
 from typing import Optional, Union, Tuple, List, Any
-from pymongo.collection import Collection  # type: ignore # pylint: disable=import-error
+from pymongo.collection import Collection  # pylint: disable=import-error
 
 logging.basicConfig(level=logging.WARN)
 

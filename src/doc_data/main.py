@@ -22,10 +22,10 @@ if __name__ == "__main__":  # pragma: no cover
     import time
     import logging
     import pandas as pd
-    from pymongo.database import Database  # type: ignore
-    from pymongo.collection import Collection  # type: ignore
-    from tqdm import trange  # type: ignore
-    import stanza  # type: ignore
+    from pymongo.database import Database
+    from pymongo.collection import Collection
+    from tqdm import trange
+    import stanza
     from doc_data.processor import gen_data
     from doc_data.db import mongo, write_pickle_to_mongo
     from doc_data.query import independent_query, dependent_query
