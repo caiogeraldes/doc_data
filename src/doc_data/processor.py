@@ -3,8 +3,8 @@ Module for processing and generating the serialized stanza dataset
 from .json files of the Diorisis Corpus.
 """
 import json
-import stanza  # type: ignore
-from cltk.alphabet.grc import normalize_grc, beta_to_unicode  # type: ignore
+import stanza
+from cltk.alphabet.grc import normalize_grc, beta_to_unicode
 
 
 def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:

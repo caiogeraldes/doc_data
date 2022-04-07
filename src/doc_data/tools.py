@@ -2,7 +2,7 @@
 Helper functions
 """
 from typing import Union
-from pymongo.collection import Collection  # type: ignore
+from pymongo.collection import Collection
 
 
 def gen_sent(
