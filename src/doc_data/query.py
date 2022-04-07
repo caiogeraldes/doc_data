@@ -96,7 +96,7 @@ def dependent_query(
     name: str,
     relation: str,
     head_collection: Collection,
-):  # pylint: disable=too-many-arguments
+):  # pylint: disable=too-many-arguments # pragma: no cover
     """
     TODO
     """
@@ -136,7 +136,7 @@ def dependent_query(
 
 def query_builder(
     query: List[Any], heading: Union[Collection, List[Collection]]
-) -> List[Any]:
+) -> List[Any]:  # pragma: no cover
     """
     TODO
     """

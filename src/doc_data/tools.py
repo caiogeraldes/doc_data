@@ -23,7 +23,7 @@ def gen_sent(
     return " ".join(sent_tokens)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     from doc_data.db import mongo
     from doc_data.main import MONGO
 

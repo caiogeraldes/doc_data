@@ -17,6 +17,9 @@ def test_mongo_connection():
     with raises(ConnectionFailure) as excinfo:
         mongo(MONGO_ERROR_PATH, database_name="pytest")
     assert excinfo.errisinstance(ConnectionFailure)
+    with raises(TypeError) as excinfo:
+        mongo(None)
+    assert excinfo.errisinstance(TypeError)
 
 
 FIXTURE_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "data")
