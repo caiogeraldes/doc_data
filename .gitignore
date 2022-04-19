@@ -144,3 +144,4 @@ notebook/
 .unused/
 test_main.py
 stanza_resources/
+.idea

@@ -2,7 +2,7 @@
 Handles the querying for building the sentences database
 """
 import logging
-from typing import Optional, Union, Tuple, List, Any
+from typing import Optional, Union, Tuple, List
 from pymongo.collection import Collection  # pylint: disable=import-error
 
 logging.basicConfig(level=logging.WARN)
@@ -132,23 +132,3 @@ def dependent_query(
         ]
     )
     return collection.database["interest_tokens"], collection.database[name]
-
-
-def query_builder(
-    query: List[Any], heading: Union[Collection, List[Collection]]
-) -> List[Any]:  # pragma: no cover
-    """
-    TODO
-    """
-    # query_sentences = query.copy()
-    query_hits = query.copy()
-    # query_name = query.copy()
-
-    if isinstance(heading, list):
-        head_ids = []
-        for head in heading:
-            head_ids.extend(head.distinct("text-sentence-id"))
-        head_ids = list(set(head_ids))
-        query_hits[0]["$match"]["text-sentence-head"] = {"$in": head_ids}
-
-    return query_hits

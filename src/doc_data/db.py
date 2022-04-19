@@ -24,7 +24,7 @@ def mongo(mongo_url: Optional[str], database_name: str = "phd") -> Database:
         raise TypeError
 
     try:
-        client = MongoClient(mongo_url)
+        client: MongoClient = MongoClient(mongo_url)
         print("Connected successfully")
     except:  # noqa: E722  pylint: disable=W0707
         raise ConnectionFailure
