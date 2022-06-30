@@ -7,7 +7,8 @@ from pymongo.errors import ConnectionFailure
 
 pytest_plugins = "pytester"
 
-MONGO = "mongodb+srv://pytest:1234@pytest.ckrsn.mongodb.net/pytest?retryWrites=true&w=majority"
+# MONGO = "mongodb+srv://pytest:1234@pytest.ckrsn.mongodb.net/pytest?retryWrites=true&w=majority"
+MONGO = "mongodb://localhost:27017"
 MONGO_ERROR_PATH = "mongodb+srv://silenus:86432@cluster0.ckrsn.mongodb.net/pytest?retryWrites=true&w=majority"
 
 
