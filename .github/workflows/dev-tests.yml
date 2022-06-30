@@ -23,7 +23,7 @@ jobs:
     - name: GitHub checkout
       uses: actions/checkout@v2
 
-    - name: Start MongoDB
+    - name: Start MongoDB with Supercharge
       uses: supercharge/mongodb-github-action@1.7.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}

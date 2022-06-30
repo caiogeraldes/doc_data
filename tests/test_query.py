@@ -5,7 +5,7 @@ from doc_data.query import validate, independent_query
 
 pytest_plugins = "pytester"
 
-MONGO = "mongodb+srv://pytest:1234@pytest.ckrsn.mongodb.net/pytest?retryWrites=true&w=majority"
+MONGO = "mongodb://localhost:27017"
 
 
 def test_validation():
