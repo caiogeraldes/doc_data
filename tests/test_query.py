@@ -1,7 +1,7 @@
 import os
 import pytest
 from doc_data.db import mongo, write_pickle_to_mongo
-from doc_data.query import validate, independent_query, get_value_by_tsi
+from doc_data.query import validate, independent_query, get_value_by_tsi, get_dependents
 
 pytest_plugins = "pytester"
 
@@ -59,7 +59,7 @@ def test_independent_query(datafiles):
 
 
 @pytest.mark.datafiles(os.path.join(FIXTURE_DIR))
-def test_get_value_by_id(datafiles):
+def test_get_functions(datafiles):
     PROC_DATA_PATH = str(datafiles)
     db = mongo(MONGO, database_name="pytest")
     test_collection = db.test
@@ -73,3 +73,11 @@ def test_get_value_by_id(datafiles):
     assert len(hits) == 1
     hit = hits[0]
     assert hit["lemma"] == "εἰ"
+
+    hits = get_dependents(
+        test_collection, text_sentence_id="a99d9d25a2169f8ca3e87b6c3dccebfd"
+    )
+
+    assert len(hits) == 4
+    hit = hits[1]
+    assert hit["upos"] == "INTJ"

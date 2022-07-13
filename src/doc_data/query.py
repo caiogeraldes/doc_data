@@ -141,3 +141,12 @@ def get_value_by_tsi(collection: Collection, text_sentence_id: str) -> List:
     hits = collection.aggregate([{"$match": {"text-sentence-id": text_sentence_id}}])
 
     return list(hits)
+
+
+def get_dependents(collection: Collection, text_sentence_id: str) -> List:
+    """
+    TODO
+    """
+    hits = collection.aggregate([{"$match": {"text-sentence-head": text_sentence_id}}])
+
+    return list(hits)
