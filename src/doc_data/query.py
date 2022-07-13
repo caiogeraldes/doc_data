@@ -132,3 +132,12 @@ def dependent_query(
         ]
     )
     return collection.database["interest_tokens"], collection.database[name]
+
+
+def get_value_by_tsi(collection: Collection, text_sentence_id: str) -> List:
+    """
+    TODO
+    """
+    hits = collection.aggregate([{"$match": {"text-sentence-id": text_sentence_id}}])
+
+    return list(hits)
