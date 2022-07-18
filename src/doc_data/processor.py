@@ -4,7 +4,7 @@ from .json files of the Diorisis Corpus.
 """
 import json
 import stanza
-from cltk.alphabet.grc import normalize_grc, beta_to_unicode
+from cltk.alphabet.grc import beta_to_unicode  # normalize_grc, beta_to_unicode
 
 
 def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
@@ -24,7 +24,7 @@ def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
             for token in sent["tokens"]:
                 texto_beta += token["form"] + " "
         conv = beta_to_unicode.BetaCodeReplacer()
-        texto_uni = normalize_grc(conv.replace_beta_code(texto_beta))
+        texto_uni = conv.replace_beta_code(texto_beta)
         del conv
         del doc
         del texto_beta
