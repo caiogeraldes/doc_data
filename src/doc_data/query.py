@@ -136,16 +136,16 @@ def dependent_query(
 
 def get_value_by_tsi(collection: Collection, text_sentence_id: str) -> List:
     """
-    TODO
+    Return a list including a document fetch by to its unique text-sentence-id (tsi).
     """
     hits = collection.aggregate([{"$match": {"text-sentence-id": text_sentence_id}}])
 
     return list(hits)
 
 
-def get_dependents(collection: Collection, text_sentence_id: str) -> List:
+def get_dependents_by_tsi(collection: Collection, text_sentence_id: str) -> List:
     """
-    TODO
+    Returns a list of documents whose head is marked by a given text-sentence-id (tsi).
     """
     hits = collection.aggregate([{"$match": {"text-sentence-head": text_sentence_id}}])
 

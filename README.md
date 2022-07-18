@@ -35,9 +35,11 @@ MONGO="mongodb://000.0.0.0:00000/" # Connection to a MongoDB database
 Conversão do banco de dados em `DIORISIS_PATH` em um documento `stanza` (`src/doc_data/processor.py`) serializado salvo em `PROC_DATA_PATH`.
 
 1. Extração das formas dos tokens.
-2. Conversão de betacode para unicode e normalização (com apoio do pacote `cltk`).
+2. Conversão de betacode para unicode (com apoio do pacote `cltk`).[^1]
 3. Processamento de língua natural utilizando o pacote `stanza` (dados do `perseus`).
 4. Serialização em `.pickle`.
+
+[^1]: De acordo com a versão `cltk==1.1.4`, não é mais necessário realizar a normalização, vide cltk/cltk#1163.
 
 ### Criação de banco de dados
 
