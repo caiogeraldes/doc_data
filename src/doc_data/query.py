@@ -131,6 +131,8 @@ def dependent_query(
             {"$out": name},
         ]
     )
+
+    print(f"Hits for {feature} = {value}: {len(hits)}")
     return collection.database["interest_tokens"], collection.database[name]
 
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "doc_data"
-version = "0.5.6"
+version = "0.5.7"
 license = "MIT"
 description = "Data collector for my PhD"
 authors = ["Caio Geraldes <caio.geraldes@usp.br>"]
