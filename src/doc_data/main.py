@@ -2,18 +2,16 @@
 Entry point to generate my PhD data
 """
 import os
-from typing import Union
 from dotenv import load_dotenv
 
 load_dotenv()
 
-DIORISIS_PATH: Union[str, None] = os.getenv("DIORISIS_PATH")
-PROC_DATA_PATH: Union[str, None] = os.getenv("PROC_DATA_PATH")
-MONGO: Union[str, None] = os.getenv("MONGO")
-STANZA_RESOURCES_DIR: Union[str, None] = os.getenv("STANZA_RESOURCES_DIR")
-MVI: Union[str, None] = os.getenv("MVI")
-LOG: Union[str, None] = os.getenv("LOG")
-MODEL: Union[str, None] = os.getenv("MODEL")
+DIORISIS_PATH = os.getenv("DIORISIS_PATH")
+PROC_DATA_PATH = os.getenv("PROC_DATA_PATH")
+MONGO = os.getenv("MONGO")
+STANZA_RESOURCES_DIR = os.getenv("STANZA_RESOURCES_DIR")
+MVI = os.getenv("MVI")
+LOG = os.getenv("LOG")
 assert DIORISIS_PATH is not None, "Path to DIORISIS unspecified"
 assert PROC_DATA_PATH is not None, "Path to serialized stanza.Documents unspecified"
 assert MONGO is not None, "MongoDB connection unspecified"
@@ -44,24 +42,21 @@ if __name__ == "__main__":  # pragma: no cover
 
     start = time.time()
 
-    if MODEL is None:
-        MODEL = "perseus"
-
     if not os.path.exists(PROC_DATA_PATH):
         logging.warning("Creating %s", {PROC_DATA_PATH})
         os.mkdir(PROC_DATA_PATH)
 
     if not os.path.exists(STANZA_RESOURCES_DIR):
         logging.info("Downloading stanza resources to: %s", STANZA_RESOURCES_DIR)
-        stanza.download(lang="grc", package=MODEL, model_dir=STANZA_RESOURCES_DIR)
+        stanza.download(lang="grc", package="perseus", model_dir=STANZA_RESOURCES_DIR)
     elif len(os.listdir(STANZA_RESOURCES_DIR)) == 0:
         logging.info("Downloading stanza resources to: %s", STANZA_RESOURCES_DIR)
-        stanza.download(lang="grc", package=MODEL, model_dir=STANZA_RESOURCES_DIR)
+        stanza.download(lang="grc", package="perseus", model_dir=STANZA_RESOURCES_DIR)
 
     logging.info("Loading NLP Pipeline")
     nlp = stanza.Pipeline(
         lang="grc",
-        package=MODEL,
+        package="perseus",
         verbose=False,
         depparse_batch_size=400,
         dir=STANZA_RESOURCES_DIR,
@@ -98,12 +93,7 @@ if __name__ == "__main__":  # pragma: no cover
         "Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH
     )
     db: Database = mongo(MONGO)
-
-    if MODEL == "proiel":
-        col: Collection = db.tokens_proiel
-    else:
-        col: Collection = db.tokens
-
+    col: Collection = db.tokens
     if col.estimated_document_count() == 0:
         write_pickle_to_mongo(PROC_DATA_PATH, col)
     else:
