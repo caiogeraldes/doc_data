@@ -2,16 +2,18 @@
 Entry point to generate my PhD data
 """
 import os
+from typing import Union
 from dotenv import load_dotenv
 
 load_dotenv()
 
-DIORISIS_PATH = os.getenv("DIORISIS_PATH")
-PROC_DATA_PATH = os.getenv("PROC_DATA_PATH")
-MONGO = os.getenv("MONGO")
-STANZA_RESOURCES_DIR = os.getenv("STANZA_RESOURCES_DIR")
-MVI = os.getenv("MVI")
-LOG = os.getenv("LOG")
+DIORISIS_PATH: Union[str, None] = os.getenv("DIORISIS_PATH")
+PROC_DATA_PATH: Union[str, None] = os.getenv("PROC_DATA_PATH")
+MONGO: Union[str, None] = os.getenv("MONGO")
+STANZA_RESOURCES_DIR: Union[str, None] = os.getenv("STANZA_RESOURCES_DIR")
+MVI: Union[str, None] = os.getenv("MVI")
+LOG: Union[str, None] = os.getenv("LOG")
+MODEL: Union[str, None] = os.getenv("MODEL")
 assert DIORISIS_PATH is not None, "Path to DIORISIS unspecified"
 assert PROC_DATA_PATH is not None, "Path to serialized stanza.Documents unspecified"
 assert MONGO is not None, "MongoDB connection unspecified"
