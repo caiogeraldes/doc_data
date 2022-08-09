@@ -93,7 +93,16 @@ if __name__ == "__main__":  # pragma: no cover
         "Building MongoDB tokens collection from the data in: %s", PROC_DATA_PATH
     )
     db: Database = mongo(MONGO)
+<<<<<<< HEAD
     col: Collection = db.tokens
+=======
+
+    if MODEL == "proiel":
+        col: Collection = db.tokens_proiel
+    else:
+        col = db.tokens
+
+>>>>>>> main
     if col.estimated_document_count() == 0:
         write_pickle_to_mongo(PROC_DATA_PATH, col)
     else:
