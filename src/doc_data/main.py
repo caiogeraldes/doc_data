@@ -102,7 +102,7 @@ if __name__ == "__main__":  # pragma: no cover
     if MODEL == "proiel":
         col: Collection = db.tokens_proiel
     else:
-        col: Collection = db.tokens
+        col = db.tokens
 
     if col.estimated_document_count() == 0:
         write_pickle_to_mongo(PROC_DATA_PATH, col)
