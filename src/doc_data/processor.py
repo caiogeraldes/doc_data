@@ -4,6 +4,7 @@ from .json files of the Diorisis Corpus.
 """
 import json
 import stanza
+from unicodedata import normalize
 from cltk.alphabet.grc import beta_to_unicode  # normalize_grc, beta_to_unicode
 from doc_data.tools import is_particle
 
@@ -32,7 +33,7 @@ def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
             if not is_particle(token):
                 out_text.append(token)
 
-        texto_uni = " ".join(out_text)
+        texto_uni = normalize("NFC", " ".join(out_text))
 
         del conv
         del doc
