@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: GitHub checkout
         uses: actions/checkout@v2
+      - name: With Pybind11 Action
+        uses: florianblume/with-pybind11-action@v0.3
       - name: Start MongoDB with Supercharge
         uses: supercharge/mongodb-github-action@1.9.0
         with:
