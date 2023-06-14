@@ -14,6 +14,7 @@ STANZA_RESOURCES_DIR: Union[str, None] = os.getenv("STANZA_RESOURCES_DIR")
 MVI: Union[str, None] = os.getenv("MVI")
 LOG: Union[str, None] = os.getenv("LOG")
 MODEL: Union[str, None] = os.getenv("MODEL")
+MODEL_PATH: Union[str, None] = os.getenv("MODEL")
 assert DIORISIS_PATH is not None, "Path to DIORISIS unspecified"
 assert PROC_DATA_PATH is not None, "Path to serialized stanza.Documents unspecified"
 assert MONGO is not None, "MongoDB connection unspecified"
@@ -49,36 +50,64 @@ if __name__ == "__main__":  # pragma: no cover
         os.mkdir(PROC_DATA_PATH)
 
     if not os.path.exists(STANZA_RESOURCES_DIR):
-        logging.info("Downloading stanza resources to: %s", STANZA_RESOURCES_DIR)
-        stanza.download(lang="grc", package="perseus", model_dir=STANZA_RESOURCES_DIR)
+        logging.info("Downloading stanza resources to: %s",
+                     STANZA_RESOURCES_DIR)
+        stanza.download(lang="grc", package="perseus",
+                        model_dir=STANZA_RESOURCES_DIR)
     elif len(os.listdir(STANZA_RESOURCES_DIR)) == 0:
-        logging.info("Downloading stanza resources to: %s", STANZA_RESOURCES_DIR)
-        stanza.download(lang="grc", package="perseus", model_dir=STANZA_RESOURCES_DIR)
+        logging.info("Downloading stanza resources to: %s",
+                     STANZA_RESOURCES_DIR)
+        stanza.download(lang="grc", package="perseus",
+                        model_dir=STANZA_RESOURCES_DIR)
 
     logging.info("Loading NLP Pipeline")
-    nlp = stanza.Pipeline(
-        lang="grc",
-        package="perseus",
-        verbose=False,
-        depparse_batch_size=400,
-        dir=STANZA_RESOURCES_DIR,
-    )
+    if MODEL_PATH is not None:
+        logging.info("Using retrained models")
+        nlp = stanza.Pipeline(
+            lang="grc",
+            package="perseus",
+            verbose=False,
+            depparse_batch_size=400,
+            dir=STANZA_RESOURCES_DIR,
+            gpu=True,
+            pos_model_path=os.path.join(
+                MODEL_PATH, "pos/grc_perseus_tagger.pt"),
+            depparse_model_path=os.path.join(
+                MODEL_PATH, "depparse/grc_perseus_parser.pt"),
+            lemma_model_path=os.path.join(
+                MODEL_PATH, "lemma/grc_perseus_lemmatizer.pt"),
+            tokenize_model_path=os.path.join(
+                MODEL_PATH, "tokenize/grc_perseus_tokenizer.pt"),
+        )
+    else:
+        logging.info("Using pretrained models")
+        nlp = stanza.Pipeline(
+            lang="grc",
+            package="perseus",
+            verbose=False,
+            depparse_batch_size=400,
+            dir=STANZA_RESOURCES_DIR,
+            gpu=True
+        )
 
     start_serialization = time.time()
 
-    diorisis_files = [x for x in os.listdir(DIORISIS_PATH) if x != "corpus.json"]
+    diorisis_files = [x for x in os.listdir(
+        DIORISIS_PATH) if x != "corpus.json"]
     n_files = len(diorisis_files)
     pbar = trange(n_files, desc="Processing Diorisis data", leave=True)
     for i, json_file in zip(pbar, diorisis_files):
         fpath = os.path.join(DIORISIS_PATH, json_file)
-        opath = os.path.join(PROC_DATA_PATH, json_file.replace("json", "pickle"))
+        opath = os.path.join(
+            PROC_DATA_PATH, json_file.replace("json", "pickle"))
         if not os.path.exists(opath):
             STATUS = "New"
             logging.info("Processing file %s", fpath)
             gen_data(nlp, str(fpath), str(opath))
         else:
             STATUS = "Existing"
-            logging.warning("File %s already existed in %s", str(opath), PROC_DATA_PATH)
+            logging.warning("File %s already existed in %s",
+                            str(opath), PROC_DATA_PATH)
         pbar.set_description(
             f"Processed file {json_file} ({i + 1}/{n_files} - {STATUS})"
         )
@@ -98,7 +127,7 @@ if __name__ == "__main__":  # pragma: no cover
     col: Collection = db.tokens
 
     if MODEL == "proiel":
-        col: Collection = db.tokens_proiel
+        col = db.tokens_proiel
     else:
         col = db.tokens
 
@@ -110,7 +139,8 @@ if __name__ == "__main__":  # pragma: no cover
         )
 
     end = time.time()
-    logging.info("Creation of tokens collection took %s seconds", end - start_mongo)
+    logging.info("Creation of tokens collection took %s seconds",
+                 end - start_mongo)
 
     start_query = time.time()
 
