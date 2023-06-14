@@ -4,6 +4,8 @@ from .json files of the Diorisis Corpus.
 """
 import json
 import stanza
+
+# from doc_data import beta_to_unicode  # normalize_grc, beta_to_unicode
 from cltk.alphabet.grc import beta_to_unicode  # normalize_grc, beta_to_unicode
 
 
