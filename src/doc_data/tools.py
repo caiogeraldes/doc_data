@@ -52,9 +52,11 @@ def gen_hits(
     return data
 
 
-def is_particle(form: str) -> bool:
-    """
-    Asserts if a given form is a (problematic) particle.
-    """
-    particles = ["δέ", "δὲ", "δ’"]
-    return form in particles
+if __name__ == "__main__":  # pragma: no cover
+    from doc_data.db import mongo
+    from doc_data.main import MONGO
+
+    db = mongo(MONGO)
+    sent_collection = db.interest_tokens
+
+    print(gen_sent(sent_collection, "229ed0100155655deed043002aa3dbdd"))

@@ -4,8 +4,9 @@ from .json files of the Diorisis Corpus.
 """
 import json
 import stanza
+
+# from doc_data import beta_to_unicode  # normalize_grc, beta_to_unicode
 from cltk.alphabet.grc import beta_to_unicode  # normalize_grc, beta_to_unicode
-from doc_data.tools import is_particle
 
 
 def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
@@ -26,14 +27,6 @@ def gen_data(nlp: stanza.Pipeline, diorisis_file: str, out_name: str) -> None:
                 texto_beta += token["form"] + " "
         conv = beta_to_unicode.BetaCodeReplacer()
         texto_uni = conv.replace_beta_code(texto_beta)
-
-        out_text = []
-        for token in texto_uni.split(" "):
-            if not is_particle(token):
-                out_text.append(token)
-
-        texto_uni = " ".join(out_text)
-
         del conv
         del doc
         del texto_beta
