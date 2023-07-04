@@ -2,7 +2,7 @@
 Entry point to generate my PhD data
 """
 import os
-from typing import Union
+from typing import Union, List
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -32,6 +32,7 @@ if __name__ == "__main__":  # pragma: no cover
     from doc_data.processor import gen_data
     from doc_data.db import mongo, write_pickle_to_mongo
     from doc_data.query import independent_query, dependent_query
+    from doc_data.tools import gen_sent, gen_hits, gen_meta
 
     # Remove all handlers associated with the root logger object.
     for handler in logging.root.handlers[:]:
@@ -140,33 +141,88 @@ if __name__ == "__main__":  # pragma: no cover
 
     mvi_df: pd.DataFrame = pd.read_csv(MVI)
 
-    lemmata = list(mvi_df.lemma)
-    sent_collection, mvi_collection = independent_query(
+    lemmata_dat: List[str] = list(mvi_df.loc[mvi_df["xobj_case"] == "dat"].lemma)
+    sent_collection, mvi_dat_collection = independent_query(
         col,
         feature="lemma",
         relation="$in",
-        value=lemmata,
+        value=lemmata_dat,
         name="mviquery",
     )
-    sent_collection, mvi_collection = dependent_query(
+    sent_collection, mvi_dat_collection = dependent_query(
         sent_collection,
         feature="feats",
         relation="$regex",
         value="VerbForm=Inf",
         name="infquery",
-        head_collection=mvi_collection,
+        head_collection=mvi_dat_collection,
     )
-    sent_collection, mvi_collection = dependent_query(
+    sent_collection, mvi_dat_collection = dependent_query(
         sent_collection,
         feature="feats",
         relation="$regex",
-        value="Case=Dat|Case=Gen",
+        value="Case=Dat",
         name="xobjquery",
-        head_collection=mvi_collection,
+        head_collection=mvi_dat_collection,
     )
+
+    # lemmata_gen = list(mvi_df.loc[mvi_df["xobj_case"] == "gen"].lemma)
+    # sent_collection, mvi_gen_collection = independent_query(
+    #     col,
+    #     feature="lemma",
+    #     relation="$in",
+    #     value=lemmata_gen,
+    #     name="mvi_gen_query",
+    # )
+    # sent_collection, mvi_gen_collection = dependent_query(
+    #     sent_collection,
+    #     feature="feats",
+    #     relation="$regex",
+    #     value="VerbForm=Inf",
+    #     name="inf_gen_query",
+    #     head_collection=mvi_gen_collection,
+    # )
+    # sent_collection, mvi_gen_collection = dependent_query(
+    #     sent_collection,
+    #     feature="feats",
+    #     relation="$regex",
+    #     value="Case=Gen",
+    #     name="xobj_gen_query",
+    #     head_collection=mvi_gen_collection,
+    # )
 
     end = time.time()
     logging.info("Queries on MongoDB took %s seconds", end - start_query)
+
+    start_build = time.time()
+
+    logging.info("DataFrame Build")
+    xobj = db.xobjquery
+    tss = xobj.distinct("text-sentence")
+    interest_tokens = db.interest_tokens
+
+    df = pd.DataFrame.from_dict(
+        [
+            {
+                "metadata": gen_meta(interest_tokens, ts),
+                "sent": gen_sent(interest_tokens, ts),
+                "mvi": ";".join(
+                    gen_hits(interest_tokens, ts, [db.mviquery])["mviquery"]
+                ),
+                "inf": ";".join(
+                    gen_hits(interest_tokens, ts, [db.infquery])["infquery"]
+                ),
+                "xobj": ";".join(
+                    gen_hits(interest_tokens, ts, [db.xobjquery])["xobjquery"]
+                ),
+            }
+            for ts in tss
+        ]
+    )
+
+    df.to_csv("dat.csv")
+
+    logging.info("DataFrame Build took %s seconds", end - start_build)
 
     end = time.time()
     logging.info("Full database generation took %s seconds", end - start)
